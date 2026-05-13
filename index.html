@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transia Career — Wujudkan Impianmu Bekerja di Jepang</title>
+<meta name="description" content="LPK Transia Career — Program kerja ke Jepang jalur SSW dan Magang profesional dan terpercaya dari Blora, Jawa Tengah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #E63027;
+  --red-light: #ff4a41;
+  --red-dark: #c0241c;
+  --sky: #3B9ED0;
+  --sky-light: #5BB8EA;
+  --sky-dark: #1e7ab0;
+  --sky-pale: #EBF6FD;
+  --white: #ffffff;
+  --off-white: #F8FBFE;
+  --dark: #1a2332;
+  --dark-mid: #2d3e52;
+  --gray: #6b7f96;
+  --gray-light: #e2edf5;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --shadow-sm: 0 2px 8px rgba(30,122,176,0.10);
+  --shadow-md: 0 8px 32px rgba(30,122,176,0.14);
+  --shadow-lg: 0 24px 64px rgba(30,122,176,0.18);
+  --radius: 16px;
+  --radius-lg: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* ── PAGES ─────────────────────────────────── */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ── NAVBAR ─────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(59,158,208,0.12);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+  transition: box-shadow .3s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+
+.nav-logo {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 38px; height: 38px;
+}
+.nav-logo-text { font-family: var(--font-display); font-size: 1.3rem; color: var(--dark); font-weight: 700; }
+.nav-logo-text span { color: var(--sky); }
+
+.nav-links {
+  display: flex; align-items: center; gap: 8px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none; color: var(--dark-mid); font-weight: 500;
+  font-size: .9rem; padding: 8px 14px; border-radius: 8px;
+  transition: all .2s; cursor: pointer;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sky); background: var(--sky-pale); }
+
+.nav-cta {
+  background: var(--red); color: var(--white) !important;
+  padding: 9px 20px !important; border-radius: 10px !important;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--red-light) !important; color: var(--white) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(230,48,39,0.3) !important; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+.hamburger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: .3s; }
+
+/* ── HERO ─────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--sky-pale) 0%, #fff 50%, #fff5f5 100%);
+  display: flex; align-items: center;
+  padding: 90px 5% 60px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,158,208,0.08) 0%, transparent 70%);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: -50px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,48,39,0.05) 0%, transparent 70%);
+}
+
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  position: relative; z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(59,158,208,0.1); border: 1px solid rgba(59,158,208,0.2);
+  color: var(--sky-dark); font-size: .8rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+}
+.hero-badge::before { content: '🇯🇵'; }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1.15;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+.hero h1 em { color: var(--sky); font-style: normal; }
+.hero h1 strong { color: var(--red); }
+
+.hero-sub {
+  font-size: 1.05rem; color: var(--gray); line-height: 1.7;
+  margin-bottom: 36px; max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px;
+}
+
+.btn-primary {
+  background: var(--red); color: var(--white);
+  padding: 14px 28px; border-radius: 12px;
+  font-weight: 700; font-size: .95rem;
+  border: none; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all .25s;
+  box-shadow: 0 4px 20px rgba(230,48,39,0.3);
+}
+.btn-primary:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,48,39,0.4); }
+
+.btn-secondary {
+  background: var(--white); color: var(--sky);
+  padding: 14px 28px; border-radius: 12px;
+  font-weight: 600; font-size: .95rem;
+  border: 2px solid var(--sky); cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all .25s;
+}
+.btn-secondary:hover { background: var(--sky-pale); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; gap: 32px;
+}
+.stat-item {}
+.stat-num { font-family: var(--font-display); font-size: 2rem; color: var(--dark); font-weight: 900; }
+.stat-num span { color: var(--red); }
+.stat-label { font-size: .8rem; color: var(--gray); font-weight: 500; }
+
+.hero-visual {
+  position: relative;
+}
+.hero-card-main {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-light);
+  position: relative;
+}
+.hero-card-main::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--sky), var(--red));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.hero-flag {
+  font-size: 3rem; margin-bottom: 16px; display: block;
+}
+.hero-card-title {
+  font-family: var(--font-display); font-size: 1.4rem; color: var(--dark);
+  margin-bottom: 8px;
+}
+.hero-card-sub { color: var(--gray); font-size: .9rem; margin-bottom: 20px; }
+
+.route-items { display: flex; flex-direction: column; gap: 10px; }
+.route-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-radius: 10px;
+  background: var(--off-white); border: 1px solid var(--gray-light);
+}
+.route-icon { font-size: 1.2rem; }
+.route-name { font-weight: 600; font-size: .9rem; color: var(--dark); }
+.route-desc { font-size: .78rem; color: var(--gray); }
+
+.floating-badge {
+  position: absolute;
+  background: var(--white); border-radius: 12px;
+  padding: 10px 16px; box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-light);
+  display: flex; align-items: center; gap: 8px;
+  font-size: .82rem; font-weight: 600; color: var(--dark);
+  animation: float 3s ease-in-out infinite;
+}
+.floating-badge.b1 { top: -20px; right: -20px; animation-delay: 0s; }
+.floating-badge.b2 { bottom: 20px; left: -30px; animation-delay: 1.5s; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+/* ── SECTION COMMON ─────────────────────────────────── */
+section { padding: 80px 5%; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--sky); font-weight: 700; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+.section-tag::before { content: ''; width: 20px; height: 2px; background: var(--sky); border-radius: 2px; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--dark); line-height: 1.2; margin-bottom: 16px;
+}
+.section-title em { color: var(--sky); font-style: normal; }
+.section-sub { color: var(--gray); font-size: 1.02rem; line-height: 1.7; max-width: 560px; }
+
+/* ── ABOUT ─────────────────────────────────── */
+.about-section { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  margin-top: 60px;
+}
+.about-visual {
+  background: linear-gradient(135deg, var(--sky-pale), #fff);
+  border-radius: var(--radius-lg);
+  padding: 40px; display: flex; flex-direction: column; gap: 20px;
+  border: 1px solid rgba(59,158,208,0.15);
+  position: relative; overflow: hidden;
+}
+.about-visual::after {
+  content: '会社概要';
+  position: absolute; bottom: 20px; right: 20px;
+  font-size: 4rem; font-weight: 900; color: rgba(59,158,208,0.06);
+  font-family: sans-serif; line-height: 1;
+}
+.about-logo-big {
+  width: 120px;
+}
+.about-info-item {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.about-info-icon { font-size: 1.2rem; margin-top: 2px; }
+.about-info-label { font-size: .78rem; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.about-info-val { font-size: .95rem; color: var(--dark); font-weight: 600; margin-top: 2px; }
+
+.about-content {}
+.about-points { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
+.about-point {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px; border-radius: var(--radius);
+  border: 1px solid var(--gray-light);
+  transition: all .2s;
+}
+.about-point:hover { border-color: var(--sky); box-shadow: var(--shadow-sm); transform: translateX(4px); }
+.about-point-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--sky-pale); display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.about-point-title { font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.about-point-desc { font-size: .88rem; color: var(--gray); line-height: 1.6; }
+
+/* ── STATS ─────────────────────────────────── */
+.stats-section {
+  background: linear-gradient(135deg, var(--sky-dark) 0%, var(--sky) 100%);
+  color: var(--white);
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  margin-top: 0;
+}
+.stat-card { text-align: center; }
+.stat-card-num {
+  font-family: var(--font-display);
+  font-size: 3rem; font-weight: 900; color: var(--white);
+  display: flex; align-items: baseline; justify-content: center; gap: 2px;
+}
+.stat-card-num sup { font-size: 1.4rem; color: rgba(255,255,255,0.7); }
+.stat-card-label { font-size: .9rem; color: rgba(255,255,255,0.8); margin-top: 6px; font-weight: 500; }
+.stats-header { text-align: center; margin-bottom: 60px; }
+.stats-header .section-title { color: var(--white); }
+.stats-header .section-tag { color: rgba(255,255,255,0.8); }
+.stats-header .section-tag::before { background: rgba(255,255,255,0.5); }
+.stats-header .section-sub { color: rgba(255,255,255,0.75); margin: 0 auto; }
+
+/* ── PROGRAMS ─────────────────────────────────── */
+.programs-section { background: var(--off-white); }
+.programs-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px;
+}
+.program-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  overflow: hidden; border: 1px solid var(--gray-light);
+  transition: all .3s; cursor: pointer;
+}
+.program-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--sky); }
+.program-card-header {
+  padding: 28px 28px 0;
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+.program-tag {
+  font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+  padding: 5px 12px; border-radius: 100px;
+}
+.tag-ssw { background: rgba(59,158,208,0.1); color: var(--sky-dark); }
+.tag-magang { background: rgba(230,48,39,0.08); color: var(--red); }
+.program-icon { font-size: 2.4rem; }
+.program-card-body { padding: 20px 28px 28px; }
+.program-name { font-family: var(--font-display); font-size: 1.5rem; color: var(--dark); margin-bottom: 4px; }
+.program-jp { font-size: .85rem; color: var(--gray); margin-bottom: 16px; }
+.program-desc { font-size: .9rem; color: var(--gray); line-height: 1.7; margin-bottom: 20px; }
+.program-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.pf-item { display: flex; align-items: center; gap: 10px; font-size: .88rem; }
+.pf-item::before { content: '✓'; color: var(--sky); font-weight: 700; }
+.program-salary {
+  background: var(--sky-pale); border-radius: 10px; padding: 14px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ps-label { font-size: .78rem; color: var(--gray); font-weight: 600; }
+.ps-val { font-weight: 700; color: var(--sky-dark); font-size: .95rem; }
+
+.program-card.card-magang .program-salary { background: #fff5f5; }
+.program-card.card-magang .ps-val { color: var(--red); }
+
+/* ── ALUR ─────────────────────────────────── */
+.alur-section { background: var(--white); }
+.alur-timeline { margin-top: 60px; position: relative; }
+.alur-timeline::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 2px; background: linear-gradient(180deg, var(--sky), var(--red));
+  transform: translateX(-50%);
+}
+.alur-item {
+  display: flex; align-items: center; gap: 40px;
+  margin-bottom: 48px; position: relative;
+}
+.alur-item:nth-child(even) { flex-direction: row-reverse; }
+
+.alur-content {
+  flex: 1; background: var(--white);
+  border: 1px solid var(--gray-light); border-radius: var(--radius);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all .2s;
+}
+.alur-item:hover .alur-content { box-shadow: var(--shadow-md); border-color: var(--sky); }
+.alur-content-right { text-align: right; }
+.alur-num {
+  font-family: var(--font-display); font-size: .75rem; font-weight: 900;
+  color: var(--sky); text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: 6px;
+}
+.alur-title { font-weight: 700; font-size: 1.05rem; color: var(--dark); margin-bottom: 6px; }
+.alur-desc { font-size: .87rem; color: var(--gray); line-height: 1.6; }
+
+.alur-dot {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--white); border: 3px solid var(--sky);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0; z-index: 1;
+  box-shadow: 0 0 0 6px rgba(59,158,208,0.1);
+}
+.alur-item:last-child .alur-dot { border-color: var(--red); box-shadow: 0 0 0 6px rgba(230,48,39,0.1); }
+
+.alur-spacer { flex: 1; }
+
+/* ── PERSYARATAN ─────────────────────────────────── */
+.req-section { background: var(--off-white); }
+.req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
+.req-card {
+  background: var(--white); border-radius: var(--radius-lg); padding: 28px;
+  border: 1px solid var(--gray-light);
+}
+.req-card-title {
+  font-weight: 700; font-size: 1.05rem; color: var(--dark);
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.req-list { display: flex; flex-direction: column; gap: 10px; }
+.req-item {
+  display: flex; align-items: center; gap: 12px;
+  font-size: .9rem; color: var(--dark-mid); padding: 10px 12px;
+  border-radius: 8px; border: 1px solid var(--gray-light); background: var(--off-white);
+}
+.req-check {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--sky-pale); border: 2px solid var(--sky);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: .7rem; color: var(--sky);
+}
+
+/* ── TESTIMONI ─────────────────────────────────── */
+.testi-section { background: var(--white); }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.testi-card {
+  background: var(--off-white); border-radius: var(--radius);
+  padding: 28px; border: 1px solid var(--gray-light);
+  position: relative; transition: all .3s;
+}
+.testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.testi-card::before {
+  content: '"'; position: absolute; top: 16px; right: 20px;
+  font-family: var(--font-display); font-size: 5rem; color: rgba(59,158,208,0.1);
+  line-height: 1;
+}
+.testi-stars { color: #f59e0b; font-size: .9rem; margin-bottom: 14px; }
+.testi-text { font-size: .9rem; color: var(--dark-mid); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky), var(--sky-dark));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: .95rem; flex-shrink: 0;
+}
+.testi-name { font-weight: 700; font-size: .9rem; color: var(--dark); }
+.testi-role { font-size: .78rem; color: var(--gray); }
+.testi-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: .7rem; font-weight: 600; padding: 3px 8px;
+  border-radius: 100px; margin-top: 4px;
+}
+.badge-ssw { background: rgba(59,158,208,0.1); color: var(--sky-dark); }
+.badge-magang { background: rgba(230,48,39,0.08); color: var(--red); }
+
+/* ── DAFTAR ─────────────────────────────────── */
+.daftar-section { background: var(--off-white); }
+.daftar-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; margin-top: 56px; }
+.daftar-info {}
+.daftar-contact { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+.contact-item {
+  display: flex; align-items: center; gap: 14px; padding: 14px 16px;
+  background: var(--white); border-radius: 12px; border: 1px solid var(--gray-light);
+}
+.contact-icon { font-size: 1.2rem; }
+.contact-label { font-size: .78rem; color: var(--gray); font-weight: 600; }
+.contact-val { font-size: .92rem; font-weight: 600; color: var(--dark); }
+
+.daftar-form {
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 36px; box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-light);
+}
+.form-title { font-family: var(--font-display); font-size: 1.4rem; color: var(--dark); margin-bottom: 6px; }
+.form-sub { font-size: .88rem; color: var(--gray); margin-bottom: 28px; }
+.form-group { margin-bottom: 18px; }
+.form-label { display: block; font-weight: 600; font-size: .83rem; color: var(--dark-mid); margin-bottom: 6px; }
+.form-label span { color: var(--red); }
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--gray-light); border-radius: 10px;
+  font-family: var(--font-body); font-size: .93rem; color: var(--dark);
+  background: var(--off-white);
+  transition: all .2s; outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--sky); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(59,158,208,0.1);
+}
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-check {
+  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;
+}
+.form-check input { margin-top: 3px; accent-color: var(--sky); }
+.form-check label { font-size: .83rem; color: var(--gray); line-height: 1.5; }
+.form-check a { color: var(--sky); }
+.btn-submit {
+  width: 100%; padding: 15px; background: var(--red); color: var(--white);
+  border: none; border-radius: 12px; font-family: var(--font-body);
+  font-weight: 700; font-size: 1rem; cursor: pointer;
+  transition: all .25s; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-submit:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,48,39,0.35); }
+
+/* Success state */
+.form-success {
+  display: none; text-align: center; padding: 40px 20px;
+}
+.success-icon { font-size: 3.5rem; margin-bottom: 16px; }
+.success-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--dark); margin-bottom: 8px; }
+.success-msg { font-size: .9rem; color: var(--gray); line-height: 1.7; }
+.success-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; background: #25D366; color: white;
+  padding: 12px 24px; border-radius: 10px; text-decoration: none;
+  font-weight: 700; transition: .2s;
+}
+.success-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+/* ── FOOTER ─────────────────────────────────── */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.8);
+  padding: 60px 5% 30px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+.footer-brand {}
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.footer-logo-text { font-family: var(--font-display); font-size: 1.2rem; color: white; }
+.footer-desc { font-size: .88rem; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 280px; }
+.footer-col-title { font-weight: 700; font-size: .9rem; color: white; margin-bottom: 16px; }
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: .88rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: .2s; cursor: pointer; }
+.footer-links a:hover { color: var(--sky-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px; display: flex; align-items: center; justify-content: space-between;
+  font-size: .82rem; color: rgba(255,255,255,0.4);
+}
+.footer-social { display: flex; gap: 12px; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; cursor: pointer; transition: .2s; text-decoration: none;
+}
+.social-btn:hover { background: var(--sky); }
+
+/* ── ANIMATIONS ─────────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── TOAST ─────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+  background: var(--dark); color: white;
+  padding: 14px 20px; border-radius: 12px; font-size: .9rem;
+  box-shadow: var(--shadow-lg); transform: translateY(20px); opacity: 0;
+  transition: all .3s; pointer-events: none;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ── MOBILE MENU ─────────────────────────────────── */
+.mobile-menu {
+  display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 999;
+  background: white; border-bottom: 1px solid var(--gray-light);
+  padding: 20px 5%; flex-direction: column; gap: 4px;
+  box-shadow: var(--shadow-md);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  text-decoration: none; color: var(--dark-mid); font-weight: 500;
+  font-size: .95rem; padding: 12px 16px; border-radius: 8px;
+  transition: .2s; cursor: pointer;
+}
+.mobile-menu a:hover { background: var(--sky-pale); color: var(--sky); }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); gap: 24px; }
+  .req-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .daftar-inner { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .alur-timeline::before { left: 26px; }
+  .alur-item, .alur-item:nth-child(even) { flex-direction: column; align-items: flex-start; padding-left: 70px; }
+  .alur-dot { position: absolute; left: 0; }
+  .alur-spacer { display: none; }
+  .alur-content-right { text-align: left; }
+  .form-row { grid-template-columns: 1fr; }
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  section { padding: 60px 5%; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .hero-stats { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" onclick="navigate('home')">
+    <svg class="nav-logo-icon" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 48 Q10 20 40 20 Q70 20 72 48" stroke="#2a9d8f" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M8 48 Q10 52 12 52 L68 52 Q70 52 72 48" stroke="#2a9d8f" stroke-width="4" fill="none"/>
+      <line x1="8" y1="44" x2="72" y2="44" stroke="#2a9d8f" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="40" cy="18" r="10" fill="#E63027"/>
+      <line x1="40" y1="4" x2="40" y2="8" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="40" y1="28" x2="40" y2="32" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="26" y1="18" x2="30" y2="18" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="50" y1="18" x2="54" y2="18" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="30" y1="8" x2="32" y2="11" stroke="#f4a261" stroke-width="2" stroke-linecap="round"/>
+      <line x1="48" y1="25" x2="50" y2="28" stroke="#f4a261" stroke-width="2" stroke-linecap="round"/>
+      <line x1="50" y1="8" x2="48" y2="11" stroke="#f4a261" stroke-width="2" stroke-linecap="round"/>
+      <line x1="30" y1="25" x2="32" y2="28" stroke="#f4a261" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="nav-logo-text">Transia <span>Career</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="navigate('home')" data-page="home">Beranda</a></li>
+    <li><a onclick="navigate('about')" data-page="about">Tentang Kami</a></li>
+    <li><a onclick="navigate('visi')" data-page="visi">Visi & Misi</a></li>
+    <li><a onclick="navigate('program')" data-page="program">Program</a></li>
+    <li><a onclick="navigate('alur')" data-page="alur">Alur Pendaftaran</a></li>
+    <li><a onclick="navigate('testimoni')" data-page="testimoni">Testimoni</a></li>
+    <li><a onclick="navigate('daftar')" class="nav-cta" data-page="daftar">Daftar Sekarang</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="navigate('home');toggleMobile()">Beranda</a>
+  <a onclick="navigate('about');toggleMobile()">Tentang Kami</a>
+  <a onclick="navigate('visi');toggleMobile()">Visi & Misi</a>
+  <a onclick="navigate('program');toggleMobile()">Program</a>
+  <a onclick="navigate('alur');toggleMobile()">Alur Pendaftaran</a>
+  <a onclick="navigate('testimoni');toggleMobile()">Testimoni</a>
+  <a onclick="navigate('daftar');toggleMobile()" style="color:var(--red);font-weight:700;">Daftar Sekarang</a>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: HOME                                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:90px;">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">Program Kerja ke Jepang — Batch 1 Dibuka</div>
+        <h1>Wujudkan Impianmu<br><em>Bekerja</em> di<br><strong>Jepang 🇯🇵</strong></h1>
+        <p class="hero-sub">Transia Career hadir sebagai LPK profesional yang membantu putra-putri Indonesia meraih karir terbaik di Jepang melalui jalur SSW dan Magang bersertifikat.</p>
+        <div class="hero-buttons">
+          <a class="btn-primary" onclick="navigate('daftar')">✍️ Daftar Sekarang</a>
+          <a class="btn-secondary" onclick="navigate('program')">Lihat Program →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">50<span>+</span></div>
+            <div class="stat-label">Alumni Berangkat</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Jalur Program</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98<span>%</span></div>
+            <div class="stat-label">Tingkat Kelulusan</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <span class="hero-flag">🇯🇵</span>
+          <div class="hero-card-title">Program Unggulan</div>
+          <div class="hero-card-sub">Dua jalur resmi menuju Jepang</div>
+          <div class="route-items">
+            <div class="route-item">
+              <span class="route-icon">🏆</span>
+              <div>
+                <div class="route-name">SSW / Tokutei Ginouou (TG)</div>
+                <div class="route-desc">Specified Skill Worker · Gaji ¥150k–¥250k/bln</div>
+              </div>
+            </div>
+            <div class="route-item">
+              <span class="route-icon">🎓</span>
+              <div>
+                <div class="route-name">Magang / Gino Jisshu</div>
+                <div class="route-desc">Program pelatihan kerja 3 tahun di Jepang</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge b1">🎯 Batch 1 — Terbatas 15 Peserta</div>
+        <div class="floating-badge b2">✅ Resmi & Terpercaya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-section" style="padding: 64px 5%;">
+    <div class="section-inner">
+      <div class="stats-header">
+        <div class="section-tag">Pencapaian Kami</div>
+        <h2 class="section-title" style="color:white;">Angka yang <em style="color:rgba(255,255,255,0.8);">Berbicara</em></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.7);margin:0 auto;">Transia Career terus bertumbuh, membuktikan komitmen kami dalam mencetak tenaga kerja Indonesia terbaik untuk Jepang.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card fade-in">
+          <div class="stat-card-num">50<sup>+</sup></div>
+          <div class="stat-card-label">Alumni Berangkat ke Jepang</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-card-num">3</div>
+          <div class="stat-card-label">Batch Sukses Diberangkatkan</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-card-num">98<sup>%</sup></div>
+          <div class="stat-card-label">Tingkat Kelulusan Ujian</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-card-num">15</div>
+          <div class="stat-card-label">Peserta per Batch (Terbatas)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK PROGRAMS -->
+  <section style="padding: 80px 5%; background: var(--off-white);">
+    <div class="section-inner">
+      <div class="section-tag">Program Kami</div>
+      <h2 class="section-title">Dua Jalur Menuju <em>Jepang</em></h2>
+      <p class="section-sub">Pilih jalur yang sesuai dengan profil dan tujuan karir kamu.</p>
+      <div class="programs-grid" style="margin-top:40px;">
+        <div class="program-card" onclick="navigate('program')">
+          <div class="program-card-header">
+            <span class="program-tag tag-ssw">Jalur SSW</span>
+            <span class="program-icon">🏆</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Tokutei Ginouou (TG)</div>
+            <div class="program-jp">Specified Skill Worker</div>
+            <p class="program-desc">Program pekerja terampil dengan kontrak kerja resmi. Gaji kompetitif, bisa diperpanjang, dan membuka peluang karir jangka panjang di Jepang.</p>
+            <div class="program-features">
+              <div class="pf-item">Ujian JFT & SSW (Bahasa + Skill)</div>
+              <div class="pf-item">Gaji setara standar Jepang</div>
+              <div class="pf-item">Kontrak bisa diperpanjang</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Gaji</div><div class="ps-val">¥150.000 – ¥250.000 / bulan</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="program-card card-magang" onclick="navigate('program')">
+          <div class="program-card-header">
+            <span class="program-tag tag-magang">Jalur Magang</span>
+            <span class="program-icon">🎓</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Gino Jisshu</div>
+            <div class="program-jp">Praktik Kerja Teknis</div>
+            <p class="program-desc">Program magang teknis 3 tahun di Jepang. Cocok untuk fresh graduate yang ingin mendapatkan pengalaman kerja dan keterampilan teknis berkelas dunia.</p>
+            <div class="program-features">
+              <div class="pf-item">Durasi 3 tahun di Jepang</div>
+              <div class="pf-item">Biaya keberangkatan dibantu</div>
+              <div class="pf-item">Akomodasi disediakan perusahaan</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Allowance</div><div class="ps-val">¥80.000 – ¥150.000 / bulan</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI TESTIMONI -->
+  <section style="padding: 80px 5%; background:var(--white);">
+    <div class="section-inner">
+      <div class="section-tag">Testimoni</div>
+      <h2 class="section-title">Kata Mereka yang <em>Sudah Berangkat</em></h2>
+      <div class="testi-grid" style="margin-top:40px;">
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Berkat Transia Career, saya sekarang bekerja di pabrik otomotif di Aichi. Proses bimbingannya sangat profesional dan transparan. Sensei-sensei bahasa Jepangnya sangat sabar."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AS</div>
+            <div>
+              <div class="testi-name">Ahmad Santoso</div>
+              <div class="testi-role">Aichi, Jepang 🇯🇵</div>
+              <span class="testi-badge badge-ssw">SSW / TG</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Awalnya ragu, tapi setelah konsultasi langsung ke LPK-nya, saya mantap daftar. Alhamdulillah 3 bulan training selesai dan sekarang sudah 1,5 tahun di Osaka."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--red),var(--red-dark));">DR</div>
+            <div>
+              <div class="testi-name">Dewi Rahayu</div>
+              <div class="testi-role">Osaka, Jepang 🇯🇵</div>
+              <span class="testi-badge badge-magang">Magang</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Tim Transia sangat membantu dalam pengurusan dokumen COE dan VISA. Tidak ada biaya tersembunyi. Semua transparan dari awal sampai akhir."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#2a9d8f,#1a7a6a);">BP</div>
+            <div>
+              <div class="testi-name">Budi Prasetyo</div>
+              <div class="testi-role">Nagoya, Jepang 🇯🇵</div>
+              <span class="testi-badge badge-ssw">SSW / TG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a class="btn-secondary" onclick="navigate('testimoni')">Lihat Semua Testimoni →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section style="padding: 80px 5%; background: linear-gradient(135deg, var(--red-dark), var(--red));">
+    <div class="section-inner" style="text-align:center;">
+      <div style="font-size:.85rem;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;">⏰ Batch 1 Segera Penuh</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);color:white;margin-bottom:16px;">Jangan Lewatkan Kesempatan<br>Batch 1 Ini!</h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:1rem;margin-bottom:32px;">Hanya <strong style="color:white;">15 peserta</strong> per batch. Daftar sekarang sebelum kuota penuh.</p>
+      <a class="btn-primary" onclick="navigate('daftar')" style="background:white;color:var(--red);display:inline-flex;margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,0.2);">✍️ Daftar Sekarang — Gratis</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: ABOUT                                 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <section class="about-section" style="padding-top: 110px;">
+    <div class="section-inner">
+      <div class="section-tag">Tentang Kami</div>
+      <h2 class="section-title">Mengenal <em>Transia Career</em></h2>
+      <p class="section-sub">LPK resmi yang berdedikasi mempersiapkan tenaga kerja Indonesia berkualitas untuk bekerja dan berkarir di Jepang.</p>
+
+      <div class="about-grid">
+        <div class="about-visual fade-in">
+          <svg width="140" height="90" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 48 Q10 20 40 20 Q70 20 72 48" stroke="#2a9d8f" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M8 48 Q10 52 12 52 L68 52 Q70 52 72 48" stroke="#2a9d8f" stroke-width="4" fill="none"/>
+            <line x1="8" y1="44" x2="72" y2="44" stroke="#2a9d8f" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="40" cy="18" r="10" fill="#E63027"/>
+            <line x1="40" y1="4" x2="40" y2="8" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="40" y1="28" x2="40" y2="32" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="26" y1="18" x2="30" y2="18" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="50" y1="18" x2="54" y2="18" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <div class="about-info-item">
+            <span class="about-info-icon">🏢</span>
+            <div><div class="about-info-label">Nama Lembaga</div><div class="about-info-val">LPK Transia Career</div></div>
+          </div>
+          <div class="about-info-item">
+            <span class="about-info-icon">📍</span>
+            <div><div class="about-info-label">Alamat</div><div class="about-info-val">Jl. Gunung Lawu No.78 Tempelan, Blora, Jawa Tengah</div></div>
+          </div>
+          <div class="about-info-item">
+            <span class="about-info-icon">📞</span>
+            <div><div class="about-info-label">Telepon / WhatsApp</div><div class="about-info-val">0823-2677-5115</div></div>
+          </div>
+          <div class="about-info-item">
+            <span class="about-info-icon">📧</span>
+            <div><div class="about-info-label">Email</div><div class="about-info-val">Lpktransiacareer@gmail.com</div></div>
+          </div>
+          <div class="about-info-item">
+            <span class="about-info-icon">📸</span>
+            <div><div class="about-info-label">Instagram</div><div class="about-info-val">@Lpktransia_career.id</div></div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:28px;">
+            Transia Career adalah Lembaga Pelatihan Kerja (LPK) yang fokus pada persiapan dan pengiriman tenaga kerja Indonesia ke Jepang. Kami menyediakan program pelatihan komprehensif mulai dari bahasa Jepang, fisik, hingga persiapan ujian sertifikasi internasional.
+          </p>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:32px;">
+            Dengan kapasitas 15 peserta per batch, kami memastikan setiap peserta mendapatkan perhatian dan pembinaan yang optimal. Kualitas di atas kuantitas adalah filosofi kami.
+          </p>
+          <div class="about-points">
+            <div class="about-point fade-in">
+              <div class="about-point-icon">🎓</div>
+              <div>
+                <div class="about-point-title">Program Terstruktur 3 Bulan</div>
+                <div class="about-point-desc">Kurikulum intensif mencakup bahasa Jepang (N4-N5), fisik & kebugaran, dan persiapan ujian JFT/SSW.</div>
+              </div>
+            </div>
+            <div class="about-point fade-in">
+              <div class="about-point-icon">🤝</div>
+              <div>
+                <div class="about-point-title">Pendampingan Penuh</div>
+                <div class="about-point-desc">Tim kami mendampingi peserta dari awal pendaftaran hingga keberangkatan, termasuk pengurusan COE, VISA, dan KTKLN.</div>
+              </div>
+            </div>
+            <div class="about-point fade-in">
+              <div class="about-point-icon">🏅</div>
+              <div>
+                <div class="about-point-title">Kualitas Terjamin</div>
+                <div class="about-point-desc">Hanya 15 peserta per batch memastikan kualitas pembinaan yang maksimal dan tingkat kelulusan yang tinggi.</div>
+              </div>
+            </div>
+            <div class="about-point fade-in">
+              <div class="about-point-icon">🌏</div>
+              <div>
+                <div class="about-point-title">Jaringan Perusahaan Jepang</div>
+                <div class="about-point-desc">Kami memiliki relasi dengan berbagai perusahaan di Jepang untuk proses matching job yang tepat sasaran.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" style="padding: 72px 5%;">
+    <div class="section-inner">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-card-num">50<sup>+</sup></div><div class="stat-card-label">Alumni di Jepang</div></div>
+        <div class="stat-card"><div class="stat-card-num">3</div><div class="stat-card-label">Batch Sukses</div></div>
+        <div class="stat-card"><div class="stat-card-num">98<sup>%</sup></div><div class="stat-card-label">Tingkat Kelulusan</div></div>
+        <div class="stat-card"><div class="stat-card-num">15</div><div class="stat-card-label">Peserta / Batch</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: PROGRAM                               -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-program">
+  <section style="padding-top: 110px; padding-bottom: 80px; padding-left: 5%; padding-right: 5%; background: var(--off-white);">
+    <div class="section-inner">
+      <div class="section-tag">Program Kami</div>
+      <h2 class="section-title">Dua Jalur Menuju <em>Jepang</em></h2>
+      <p class="section-sub">Pilih jalur yang sesuai dengan profil, kemampuan, dan tujuan karir kamu di Jepang.</p>
+
+      <div class="programs-grid" style="margin-top:56px;">
+        <!-- SSW -->
+        <div class="program-card" style="cursor:default;">
+          <div class="program-card-header">
+            <span class="program-tag tag-ssw">Jalur SSW / TG</span>
+            <span class="program-icon">🏆</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Tokutei Ginouou (TG)</div>
+            <div class="program-jp">Specified Skill Worker — 特定技能</div>
+            <p class="program-desc">Program pekerja terampil resmi Pemerintah Jepang. Peserta akan mengikuti ujian bahasa Jepang (JFT-Basic) dan ujian skill sesuai bidang pekerjaan. Visa dapat diperpanjang dan membuka peluang karir jangka panjang.</p>
+            <div class="program-features">
+              <div class="pf-item">Ujian JFT-Basic (Bahasa Jepang N4)</div>
+              <div class="pf-item">Ujian SSW sesuai bidang (manufaktur, pertanian, dll)</div>
+              <div class="pf-item">Kontrak kerja langsung dengan perusahaan Jepang</div>
+              <div class="pf-item">Gaji setara standar minimum Jepang</div>
+              <div class="pf-item">Masa kerja 5 tahun, bisa diperpanjang</div>
+              <div class="pf-item">Bisa bawa keluarga (SSW-2)</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Gaji per Bulan</div><div class="ps-val">¥150.000 – ¥250.000</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAGANG -->
+        <div class="program-card card-magang" style="cursor:default;">
+          <div class="program-card-header">
+            <span class="program-tag tag-magang">Jalur Magang</span>
+            <span class="program-icon">🎓</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Gino Jisshu</div>
+            <div class="program-jp">Praktik Kerja Teknis — 技能実習</div>
+            <p class="program-desc">Program magang teknis resmi yang memungkinkan peserta bekerja dan belajar langsung di perusahaan Jepang selama 3 tahun. Cocok untuk fresh graduate yang ingin mendapatkan pengalaman kerja internasional dan skill teknis tinggi.</p>
+            <div class="program-features">
+              <div class="pf-item">Pelatihan bahasa Jepang intensif</div>
+              <div class="pf-item">Durasi 3 tahun di perusahaan Jepang</div>
+              <div class="pf-item">Akomodasi dan makan disediakan perusahaan</div>
+              <div class="pf-item">Tiket keberangkatan dibantu</div>
+              <div class="pf-item">Asuransi kesehatan ditanggung</div>
+              <div class="pf-item">Bisa lanjut ke jalur SSW setelah selesai</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Allowance per Bulan</div><div class="ps-val" style="color:var(--red);">¥80.000 – ¥150.000</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KELAS -->
+      <div style="margin-top:60px;background:var(--white);border-radius:var(--radius-lg);padding:40px;border:1px solid var(--gray-light);">
+        <div class="section-tag" style="margin-bottom:12px;">Jadwal Kelas di LPK</div>
+        <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--dark);margin-bottom:24px;">Program <em style="color:var(--sky);">Kelas Training</em> 3 Bulan</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+          <div style="background:var(--sky-pale);border-radius:12px;padding:20px;border:1px solid rgba(59,158,208,0.2);">
+            <div style="font-size:1.5rem;margin-bottom:8px;">📚</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">Program Bahasa</div>
+            <div style="font-size:.85rem;color:var(--gray);">Senin – Jum'at, 08:00 – 16:00</div>
+            <div style="font-size:.83rem;color:var(--sky-dark);margin-top:6px;font-weight:600;">Intensif setiap hari</div>
+          </div>
+          <div style="background:#fff5f5;border-radius:12px;padding:20px;border:1px solid rgba(230,48,39,0.1);">
+            <div style="font-size:1.5rem;margin-bottom:8px;">💪</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">Fisik & Olahraga</div>
+            <div style="font-size:.85rem;color:var(--gray);">Setiap Sabtu</div>
+            <div style="font-size:.83rem;color:var(--red);margin-top:6px;font-weight:600;">Persiapan medical check</div>
+          </div>
+          <div style="background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid rgba(34,197,94,0.2);">
+            <div style="font-size:1.5rem;margin-bottom:8px;">📝</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">Persiapan Ujian</div>
+            <div style="font-size:.85rem;color:var(--gray);">JFT & SSW Mock Test</div>
+            <div style="font-size:.83rem;color:#16a34a;margin-top:6px;font-weight:600;">Simulasi ujian berkala</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a class="btn-primary" onclick="navigate('daftar')">✍️ Daftar Program Sekarang</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: ALUR                                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-alur">
+  <section style="padding-top:110px;padding-bottom:80px;padding-left:5%;padding-right:5%;">
+    <div class="section-inner">
+      <div class="section-tag">Alur Pendaftaran</div>
+      <h2 class="section-title">Langkah Menuju <em>Jepang</em></h2>
+      <p class="section-sub">Proses yang transparan, terstruktur, dan didampingi penuh dari Transia Career sampai kamu terbang ke Jepang.</p>
+
+      <div class="alur-timeline" style="margin-top:72px;">
+        <div class="alur-item">
+          <div class="alur-content fade-in">
+            <div class="alur-num">Langkah 01</div>
+            <div class="alur-title">Pendaftaran Online</div>
+            <div class="alur-desc">Isi formulir pendaftaran secara online melalui website ini. Lampirkan dokumen dasar: KTP, ijazah, foto. Tim kami akan menghubungi dalam 1×24 jam.</div>
+          </div>
+          <div class="alur-dot">📝</div>
+          <div class="alur-spacer"></div>
+        </div>
+
+        <div class="alur-item">
+          <div class="alur-spacer"></div>
+          <div class="alur-dot">🏥</div>
+          <div class="alur-content alur-content-right fade-in">
+            <div class="alur-num">Langkah 02</div>
+            <div class="alur-title">Pra Medical Check Up</div>
+            <div class="alur-desc">Pemeriksaan kesehatan awal untuk memastikan kondisi fisik peserta memenuhi standar. Meliputi tes darah, mata, tekanan darah, dan kondisi umum.</div>
+          </div>
+        </div>
+
+        <div class="alur-item">
+          <div class="alur-content fade-in">
+            <div class="alur-num">Langkah 03</div>
+            <div class="alur-title">Pendidikan Bahasa Jepang</div>
+            <div class="alur-desc">Training intensif 3 bulan di LPK Transia Career. Senin–Jumat pelajaran bahasa Jepang, Sabtu fisik & olahraga. Target level N4–N5.</div>
+          </div>
+          <div class="alur-dot">🇯🇵</div>
+          <div class="alur-spacer"></div>
+        </div>
+
+        <div class="alur-item">
+          <div class="alur-spacer"></div>
+          <div class="alur-dot">📋</div>
+          <div class="alur-content alur-content-right fade-in">
+            <div class="alur-num">Langkah 04</div>
+            <div class="alur-title">Ujian JFT & SSW</div>
+            <div class="alur-desc">Ujian sertifikasi resmi. JFT-Basic untuk kemampuan bahasa Jepang, SSW untuk uji kompetensi bidang kerja (untuk jalur TG). Transia membantu persiapan optimal.</div>
+          </div>
+        </div>
+
+        <div class="alur-item">
+          <div class="alur-content fade-in">
+            <div class="alur-num">Langkah 05</div>
+            <div class="alur-title">Matching Job</div>
+            <div class="alur-desc">Tim Transia mencocokkan profil peserta dengan lowongan perusahaan Jepang yang sesuai. Interview dengan perusahaan Jepang (online/offline).</div>
+          </div>
+          <div class="alur-dot">🤝</div>
+          <div class="alur-spacer"></div>
+        </div>
+
+        <div class="alur-item">
+          <div class="alur-spacer"></div>
+          <div class="alur-dot">📄</div>
+          <div class="alur-content alur-content-right fade-in">
+            <div class="alur-num">Langkah 06</div>
+            <div class="alur-title">Pengurusan COE, VISA & KTKLN</div>
+            <div class="alur-desc">Tim Transia mengurus Certificate of Eligibility (COE), pengajuan VISA Jepang, dan Kartu Tenaga Kerja Luar Negeri (KTKLN) secara penuh.</div>
+          </div>
+        </div>
+
+        <div class="alur-item">
+          <div class="alur-content fade-in" style="border-color:var(--red);">
+            <div class="alur-num" style="color:var(--red);">SELESAI 🎉</div>
+            <div class="alur-title">Terbang ke Jepang!</div>
+            <div class="alur-desc">Saatnya berangkat! Tim Transia mendampingi hingga keberangkatan. Alumni Transia siap menyambut di Jepang. Karir impian kamu dimulai hari ini.</div>
+          </div>
+          <div class="alur-dot" style="font-size:1.8rem;">✈️</div>
+          <div class="alur-spacer"></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:60px;">
+        <p style="color:var(--gray);margin-bottom:20px;">Siap memulai perjalananmu?</p>
+        <a class="btn-primary" onclick="navigate('daftar')">✍️ Mulai Daftar Sekarang</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: TESTIMONI                             -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-testimoni">
+  <section style="padding-top:110px;padding-bottom:80px;padding-left:5%;padding-right:5%;background:var(--off-white);">
+    <div class="section-inner">
+      <div class="section-tag">Testimoni Alumni</div>
+      <h2 class="section-title">Mereka yang Sudah <em>Membuktikan</em></h2>
+      <p class="section-sub">Cerita nyata dari alumni Transia Career yang kini berkarir sukses di Jepang.</p>
+
+      <div class="testi-grid" style="margin-top:56px;">
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Berkat Transia Career, saya sekarang bekerja di pabrik otomotif di Aichi. Proses bimbingannya sangat profesional dan transparan dari awal sampai berangkat."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AS</div>
+            <div><div class="testi-name">Ahmad Santoso</div><div class="testi-role">Aichi, Jepang 🇯🇵</div><span class="testi-badge badge-ssw">SSW / TG</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Awalnya ragu, tapi setelah konsultasi langsung ke LPK-nya, saya mantap daftar. Alhamdulillah sudah 1,5 tahun di Osaka, kerja di perusahaan makanan."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--red),var(--red-dark));">DR</div>
+            <div><div class="testi-name">Dewi Rahayu</div><div class="testi-role">Osaka, Jepang 🇯🇵</div><span class="testi-badge badge-magang">Magang</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Tim Transia sangat membantu dalam pengurusan dokumen COE dan VISA. Tidak ada biaya tersembunyi. Semua transparan dari awal sampai akhir."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#2a9d8f,#1a7a6a);">BP</div>
+            <div><div class="testi-name">Budi Prasetyo</div><div class="testi-role">Nagoya, Jepang 🇯🇵</div><span class="testi-badge badge-ssw">SSW / TG</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Sensei-sensei bahasa Jepangnya sangat sabar dan komunikatif. Dalam 3 bulan saya bisa lulus JFT. Rekomendasi banget buat yang mau serius ke Jepang."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#5b21b6);">RW</div>
+            <div><div class="testi-name">Rina Wulandari</div><div class="testi-role">Saitama, Jepang 🇯🇵</div><span class="testi-badge badge-ssw">SSW / TG</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Proses matching job-nya cepat dan tepat. Saya ditempatkan di perusahaan konstruksi yang bagus di Tokyo. Gaji sesuai standar Jepang, puas banget."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#d97706,#b45309);">FH</div>
+            <div><div class="testi-name">Fajar Hidayat</div><div class="testi-role">Tokyo, Jepang 🇯🇵</div><span class="testi-badge badge-ssw">SSW / TG</span></div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Dari Blora langsung bisa ke Jepang, siapa yang sangka! Transia benar-benar mewujudkan mimpi saya. Sekarang sudah tahun ke-2 magang di pabrik elektronik."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--red),#7c3aed);">SN</div>
+            <div><div class="testi-name">Siti Nurhaliza</div><div class="testi-role">Hiroshima, Jepang 🇯🇵</div><span class="testi-badge badge-magang">Magang</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: DAFTAR                                -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-daftar">
+  <section class="daftar-section" style="padding-top:110px;">
+    <div class="section-inner">
+      <div class="daftar-inner">
+        <div class="daftar-info">
+          <div class="section-tag">Pendaftaran Online</div>
+          <h2 class="section-title">Daftar <em>Sekarang</em></h2>
+          <p class="section-sub">Isi formulir dengan lengkap dan jujur. Tim kami akan menghubungi kamu dalam 1×24 jam untuk proses selanjutnya.</p>
+
+          <!-- PERSYARATAN -->
+          <div style="margin-top:36px;">
+            <div style="font-weight:700;color:var(--dark);margin-bottom:16px;">✅ Persyaratan Umum</div>
+            <div class="req-list">
+              <div class="req-item"><div class="req-check">✓</div>Laki-laki / Perempuan</div>
+              <div class="req-item"><div class="req-check">✓</div>Minimal Pendidikan SMA / Sederajat</div>
+              <div class="req-item"><div class="req-check">✓</div>Usia 18 – 30 Tahun</div>
+              <div class="req-item"><div class="req-check">✓</div>Tidak Bertato dan Bertindik (berlebihan)</div>
+              <div class="req-item"><div class="req-check">✓</div>Sehat Jasmani dan Rohani</div>
+              <div class="req-item"><div class="req-check">✓</div>Tidak Buta Warna</div>
+              <div class="req-item"><div class="req-check">✓</div>TB Minimal 158 cm (Laki-laki) / 150 cm (Perempuan)</div>
+              <div class="req-item"><div class="req-check">✓</div>Berat Badan Proporsional</div>
+            </div>
+          </div>
+
+          <div class="daftar-contact">
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">📞 Hubungi Kami Langsung</div>
+            <div class="contact-item">
+              <span class="contact-icon">💬</span>
+              <div><div class="contact-label">WhatsApp / Telepon</div><div class="contact-val">0823-2677-5115</div></div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <div><div class="contact-label">Email</div><div class="contact-val">Lpktransiacareer@gmail.com</div></div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div><div class="contact-label">Alamat LPK</div><div class="contact-val">Jl. Gunung Lawu No.78 Tempelan, Blora</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="daftar-form">
+          <div id="formContent">
+            <div class="form-title">Formulir Pendaftaran</div>
+            <div class="form-sub">Batch 1 — Hanya 15 peserta. Segera daftarkan dirimu!</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nama Lengkap <span>*</span></label>
+                <input type="text" class="form-input" id="f_nama" placeholder="Nama sesuai KTP">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Jenis Kelamin <span>*</span></label>
+                <select class="form-select" id="f_gender">
+                  <option value="">Pilih...</option>
+                  <option>Laki-laki</option>
+                  <option>Perempuan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nomor WhatsApp <span>*</span></label>
+                <input type="tel" class="form-input" id="f_wa" placeholder="08xxxxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tanggal Lahir <span>*</span></label>
+                <input type="date" class="form-input" id="f_dob">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Kota / Kabupaten Asal <span>*</span></label>
+              <input type="text" class="form-input" id="f_kota" placeholder="Contoh: Blora, Jawa Tengah">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Pendidikan Terakhir <span>*</span></label>
+                <select class="form-select" id="f_pendidikan">
+                  <option value="">Pilih...</option>
+                  <option>SMA / SMK / MA</option>
+                  <option>D3</option>
+                  <option>S1</option>
+                  <option>S2</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Pilihan Program <span>*</span></label>
+                <select class="form-select" id="f_program">
+                  <option value="">Pilih...</option>
+                  <option>SSW / Tokutei Ginouou (TG)</option>
+                  <option>Magang / Gino Jisshu</option>
+                  <option>Belum Tahu / Ingin Konsultasi</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Tinggi Badan (cm)</label>
+                <input type="number" class="form-input" id="f_tb" placeholder="Contoh: 165">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Berat Badan (kg)</label>
+                <input type="number" class="form-input" id="f_bb" placeholder="Contoh: 60">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pertanyaan / Pesan (opsional)</label>
+              <textarea class="form-textarea" id="f_pesan" placeholder="Ada yang ingin kamu tanyakan? Tulis di sini..."></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="f_agree">
+              <label for="f_agree">Saya menyatakan bahwa data yang saya isi adalah benar, dan saya bersedia dihubungi oleh tim Transia Career untuk proses selanjutnya.</label>
+            </div>
+
+            <button class="btn-submit" onclick="submitForm()">
+              <span id="submitText">✍️ Kirim Pendaftaran</span>
+            </button>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">🎉</div>
+            <div class="success-title">Pendaftaran Terkirim!</div>
+            <p class="success-msg">Terima kasih, <strong id="successName"></strong>!<br>Tim Transia Career akan menghubungi kamu via WhatsApp dalam 1×24 jam.<br><br>Sambil menunggu, kamu bisa chat langsung dengan kami:</p>
+            <a class="success-wa" id="successWaLink" href="#" target="_blank">💬 Chat WhatsApp Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE: VISI MISI & AD/ART                    -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-visi">
+
+  <!-- HERO SECTION -->
+  <section style="padding-top:110px;padding-bottom:72px;padding-left:5%;padding-right:5%;background:linear-gradient(135deg,var(--sky-pale) 0%,#fff 60%,#fff5f5 100%);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(59,158,208,0.07) 0%,transparent 70%);"></div>
+    <div class="section-inner" style="position:relative;z-index:1;">
+      <div class="section-tag">Fondasi Organisasi</div>
+      <h2 class="section-title">Visi, Misi &amp; <em>Anggaran Dasar</em></h2>
+      <p class="section-sub">Landasan nilai dan tata kelola yang menjadi kompas Transia Career dalam menjalankan misi mulianya.</p>
+
+      <!-- VISI -->
+      <div style="margin-top:56px;background:var(--white);border-radius:var(--radius-lg);padding:48px;border:1px solid var(--gray-light);box-shadow:var(--shadow-md);position:relative;overflow:hidden;" class="fade-in">
+        <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sky),var(--sky-dark));border-radius:var(--radius-lg) var(--radius-lg) 0 0;"></div>
+        <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;font-weight:900;color:rgba(59,158,208,0.04);font-family:var(--font-display);line-height:1;pointer-events:none;">VISI</div>
+        <div style="display:flex;align-items:flex-start;gap:24px;">
+          <div style="width:56px;height:56px;border-radius:14px;background:var(--sky-pale);border:2px solid rgba(59,158,208,0.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🔭</div>
+          <div>
+            <div class="section-tag" style="margin-bottom:10px;">Visi</div>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--dark);line-height:1.4;margin-bottom:16px;">"Menjadi Lembaga Pelatihan Kerja Luar Negeri Terpercaya yang Mengantarkan Generasi Indonesia Berdaya Saing Global di Jepang."</h3>
+            <p style="color:var(--gray);font-size:.93rem;line-height:1.8;">Transia Career bercita-cita hadir sebagai jembatan yang kokoh antara sumber daya manusia Indonesia yang berpotensi dengan peluang karir profesional di Jepang — membangun generasi Indonesia yang tidak hanya bekerja, tetapi juga bertumbuh, berdampak, dan membawa kebanggaan bagi bangsa.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISI -->
+      <div style="margin-top:28px;background:var(--white);border-radius:var(--radius-lg);padding:48px;border:1px solid var(--gray-light);box-shadow:var(--shadow-md);position:relative;overflow:hidden;" class="fade-in">
+        <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:var(--radius-lg) var(--radius-lg) 0 0;"></div>
+        <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;font-weight:900;color:rgba(230,48,39,0.04);font-family:var(--font-display);line-height:1;pointer-events:none;">MISI</div>
+        <div style="display:flex;align-items:flex-start;gap:24px;">
+          <div style="width:56px;height:56px;border-radius:14px;background:#fff5f5;border:2px solid rgba(230,48,39,0.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🎯</div>
+          <div style="flex:1;">
+            <div class="section-tag" style="margin-bottom:16px;color:var(--red);">
+              <span style="width:20px;height:2px;background:var(--red);border-radius:2px;display:inline-block;margin-right:6px;vertical-align:middle;"></span>Misi
+            </div>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--off-white);border-radius:10px;border:1px solid var(--gray-light);">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--sky);color:white;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:1px;">01</div>
+                <p style="font-size:.92rem;color:var(--dark-mid);line-height:1.7;"><strong style="color:var(--dark);">Menyelenggarakan Pelatihan Berkualitas</strong> — Menyediakan program pendidikan bahasa Jepang, pelatihan fisik, dan uji kompetensi yang terstruktur dan sesuai standar internasional.</p>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--off-white);border-radius:10px;border:1px solid var(--gray-light);">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--sky);color:white;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:1px;">02</div>
+                <p style="font-size:.92rem;color:var(--dark-mid);line-height:1.7;"><strong style="color:var(--dark);">Memberdayakan Generasi Muda Indonesia</strong> — Membuka akses seluas-luasnya bagi putra-putri Indonesia, terutama dari daerah, untuk mendapatkan kesempatan berkarir di Jepang secara legal dan bermartabat.</p>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--off-white);border-radius:10px;border:1px solid var(--gray-light);">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--sky);color:white;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:1px;">03</div>
+                <p style="font-size:.92rem;color:var(--dark-mid);line-height:1.7;"><strong style="color:var(--dark);">Menjaga Transparansi &amp; Integritas</strong> — Menjalankan seluruh proses pendaftaran, pelatihan, dan penempatan dengan penuh keterbukaan, tanpa biaya tersembunyi, dan selalu mengutamakan kepentingan peserta.</p>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--off-white);border-radius:10px;border:1px solid var(--gray-light);">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--sky);color:white;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:1px;">04</div>
+                <p style="font-size:.92rem;color:var(--dark-mid);line-height:1.7;"><strong style="color:var(--dark);">Membangun Ekosistem yang Berkelanjutan</strong> — Mengembangkan jaringan alumni, relasi perusahaan Jepang, dan platform digital yang mendukung pertumbuhan jangka panjang peserta dan lembaga.</p>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--off-white);border-radius:10px;border:1px solid var(--gray-light);">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--sky);color:white;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:1px;">05</div>
+                <p style="font-size:.92rem;color:var(--dark-mid);line-height:1.7;"><strong style="color:var(--dark);">Memberikan Dampak Sosial Nyata</strong> — Berkontribusi pada peningkatan kesejahteraan keluarga peserta dan pengurangan angka pengangguran di daerah, khususnya wilayah Blora dan sekitarnya.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NILAI INTI -->
+      <div style="margin-top:28px;" class="fade-in">
+        <div style="text-align:center;margin-bottom:32px;">
+          <div class="section-tag" style="justify-content:center;">Nilai Inti</div>
+          <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--dark);">Core Values <em style="color:var(--sky);">Transia Career</em></h3>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+          <div style="background:var(--white);border-radius:var(--radius);padding:24px 20px;border:1px solid var(--gray-light);text-align:center;transition:.2s;" onmouseover="this.style.borderColor='var(--sky)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--gray-light)';this.style.transform='translateY(0)'">
+            <div style="font-size:2rem;margin-bottom:10px;">🤝</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:6px;">Integritas</div>
+            <div style="font-size:.82rem;color:var(--gray);line-height:1.6;">Jujur, transparan, dan konsisten dalam setiap tindakan.</div>
+          </div>
+          <div style="background:var(--white);border-radius:var(--radius);padding:24px 20px;border:1px solid var(--gray-light);text-align:center;transition:.2s;" onmouseover="this.style.borderColor='var(--sky)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--gray-light)';this.style.transform='translateY(0)'">
+            <div style="font-size:2rem;margin-bottom:10px;">🏅</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:6px;">Kualitas</div>
+            <div style="font-size:.82rem;color:var(--gray);line-height:1.6;">Mengutamakan mutu di setiap tahap proses, bukan sekadar kuantitas.</div>
+          </div>
+          <div style="background:var(--white);border-radius:var(--radius);padding:24px 20px;border:1px solid var(--gray-light);text-align:center;transition:.2s;" onmouseover="this.style.borderColor='var(--sky)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--gray-light)';this.style.transform='translateY(0)'">
+            <div style="font-size:2rem;margin-bottom:10px;">💡</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:6px;">Inovasi</div>
+            <div style="font-size:.82rem;color:var(--gray);line-height:1.6;">Terus berkembang dengan teknologi dan metode terbaik.</div>
+          </div>
+          <div style="background:var(--white);border-radius:var(--radius);padding:24px 20px;border:1px solid var(--gray-light);text-align:center;transition:.2s;" onmouseover="this.style.borderColor='var(--sky)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--gray-light)';this.style.transform='translateY(0)'">
+            <div style="font-size:2rem;margin-bottom:10px;">❤️</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:6px;">Kepedulian</div>
+            <div style="font-size:.82rem;color:var(--gray);line-height:1.6;">Peserta bukan sekadar klien — mereka adalah bagian dari keluarga Transia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANGGARAN DASAR -->
+  <section style="padding:72px 5%;background:var(--off-white);">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="section-tag" style="justify-content:center;">Legalitas &amp; Tata Kelola</div>
+        <h2 class="section-title">Anggaran Dasar <em>Organisasi</em></h2>
+        <p class="section-sub" style="margin:0 auto;">Kerangka tata kelola LPK Transia Career yang menjamin operasional yang profesional, akuntabel, dan berkelanjutan.</p>
+      </div>
+
+      <!-- BAB wrapper -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+
+        <!-- BAB I -->
+        <div style="background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-light);overflow:hidden;" class="fade-in">
+          <div style="background:linear-gradient(90deg,var(--sky-dark),var(--sky));padding:16px 28px;display:flex;align-items:center;gap:14px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:.85rem;flex-shrink:0;">I</div>
+            <div style="color:white;font-weight:700;font-size:1rem;">BAB I — Nama, Tempat Kedudukan, dan Jangka Waktu</div>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 1</span>
+              <span>Lembaga ini bernama <strong>LPK Transia Career</strong>, selanjutnya dalam Anggaran Dasar ini disebut "Lembaga".</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 2</span>
+              <span>Lembaga berkedudukan di <strong>Jl. Gunung Lawu No. 78, Tempelan, Kabupaten Blora, Jawa Tengah</strong>, dan dapat membuka cabang di wilayah lain sesuai kebutuhan.</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 3</span>
+              <span>Lembaga didirikan untuk jangka waktu <strong>tidak terbatas</strong> terhitung sejak tanggal pendiriannya dan dapat dibubarkan sesuai ketentuan yang berlaku.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB II -->
+        <div style="background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-light);overflow:hidden;" class="fade-in">
+          <div style="background:linear-gradient(90deg,var(--sky-dark),var(--sky));padding:16px 28px;display:flex;align-items:center;gap:14px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:.85rem;flex-shrink:0;">II</div>
+            <div style="color:white;font-weight:700;font-size:1rem;">BAB II — Azas, Tujuan, dan Kegiatan Usaha</div>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 4</span>
+              <span>Lembaga berazaskan <strong>Pancasila dan Undang-Undang Dasar 1945</strong>, beroperasi dalam koridor hukum Negara Kesatuan Republik Indonesia.</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 5</span>
+              <div>
+                <p style="margin-bottom:8px;">Tujuan Lembaga adalah:</p>
+                <ol style="padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                  <li>Menyelenggarakan pelatihan kerja yang berkualitas bagi tenaga kerja Indonesia yang akan bekerja di Jepang.</li>
+                  <li>Mempersiapkan peserta agar memenuhi standar kompetensi yang ditetapkan oleh pemerintah Jepang.</li>
+                  <li>Memberikan pelayanan penempatan kerja luar negeri yang legal, aman, dan bermartabat.</li>
+                  <li>Berkontribusi pada peningkatan kesejahteraan masyarakat melalui pemberdayaan tenaga kerja.</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 6</span>
+              <span>Kegiatan usaha Lembaga meliputi: pelatihan bahasa Jepang, pelatihan fisik dan kesehatan, bimbingan ujian sertifikasi JFT dan SSW, serta layanan penempatan dan administrasi keberangkatan ke Jepang.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB III -->
+        <div style="background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-light);overflow:hidden;" class="fade-in">
+          <div style="background:linear-gradient(90deg,var(--sky-dark),var(--sky));padding:16px 28px;display:flex;align-items:center;gap:14px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:.85rem;flex-shrink:0;">III</div>
+            <div style="color:white;font-weight:700;font-size:1rem;">BAB III — Kepengurusan dan Struktur Organisasi</div>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 7</span>
+              <div>
+                <p style="margin-bottom:8px;">Struktur kepengurusan Lembaga terdiri dari:</p>
+                <ol style="padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                  <li><strong>Direktur / Pimpinan Lembaga</strong> — bertanggung jawab penuh atas seluruh operasional lembaga.</li>
+                  <li><strong>Koordinator Program</strong> — mengelola kurikulum pelatihan dan jadwal kelas.</li>
+                  <li><strong>Tenaga Pengajar / Sensei</strong> — instruktur bahasa Jepang dan pelatih fisik bersertifikat.</li>
+                  <li><strong>Staf Administrasi &amp; Penempatan</strong> — mengurus dokumen, VISA, COE, dan koordinasi dengan mitra Jepang.</li>
+                  <li><strong>Staf Teknologi Informasi</strong> — mengelola platform digital, website, dan sistem pendaftaran online.</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 8</span>
+              <span>Masa jabatan pengurus adalah <strong>3 (tiga) tahun</strong> dan dapat dipilih kembali. Pergantian pengurus dilakukan melalui musyawarah internal lembaga.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB IV -->
+        <div style="background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-light);overflow:hidden;" class="fade-in">
+          <div style="background:linear-gradient(90deg,var(--sky-dark),var(--sky));padding:16px 28px;display:flex;align-items:center;gap:14px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:.85rem;flex-shrink:0;">IV</div>
+            <div style="color:white;font-weight:700;font-size:1rem;">BAB IV — Keanggotaan dan Hak Peserta</div>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 9</span>
+              <span>Peserta adalah Warga Negara Indonesia yang memenuhi persyaratan umum yang ditetapkan Lembaga, telah mendaftar secara resmi, dan telah menjalani proses seleksi awal.</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 10</span>
+              <div>
+                <p style="margin-bottom:8px;">Setiap peserta berhak untuk:</p>
+                <ol style="padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                  <li>Mendapatkan pelatihan berkualitas sesuai program yang dipilih.</li>
+                  <li>Mendapatkan informasi yang jelas dan transparan mengenai biaya, proses, dan hak-haknya.</li>
+                  <li>Mendapatkan pendampingan penuh hingga keberangkatan ke Jepang.</li>
+                  <li>Menyampaikan masukan dan keluhan kepada pengurus Lembaga.</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 11</span>
+              <div>
+                <p style="margin-bottom:8px;">Setiap peserta berkewajiban untuk:</p>
+                <ol style="padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                  <li>Mengikuti seluruh program pelatihan dengan sungguh-sungguh dan disiplin.</li>
+                  <li>Mematuhi tata tertib Lembaga dan peraturan yang berlaku.</li>
+                  <li>Memberikan informasi yang jujur dan akurat selama proses pendaftaran dan seleksi.</li>
+                  <li>Menjaga nama baik Lembaga dan Indonesia selama berada di Jepang.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB V -->
+        <div style="background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-light);overflow:hidden;" class="fade-in">
+          <div style="background:linear-gradient(90deg,var(--sky-dark),var(--sky));padding:16px 28px;display:flex;align-items:center;gap:14px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:.85rem;flex-shrink:0;">V</div>
+            <div style="color:white;font-weight:700;font-size:1rem;">BAB V — Keuangan dan Aset Lembaga</div>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 12</span>
+              <div>
+                <p style="margin-bottom:8px;">Sumber keuangan Lembaga berasal dari:</p>
+                <ol style="padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+                  <li>Biaya pendidikan dan pelatihan yang dibayarkan oleh peserta.</li>
+                  <li>Pendapatan dari layanan penempatan dan administrasi keberangkatan.</li>
+                  <li>Investasi dan kerjasama dengan pihak ketiga yang sah.</li>
+                  <li>Sumber pendapatan lain yang halal dan tidak bertentangan dengan hukum.</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 13</span>
+              <span>Pengelolaan keuangan dilakukan secara transparan dan akuntabel. Laporan keuangan disusun secara berkala dan dapat diakses oleh pemangku kepentingan yang berwenang.</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 14</span>
+              <span>Seluruh aset dan kekayaan Lembaga digunakan sepenuhnya untuk kepentingan operasional, pengembangan program, dan peningkatan kualitas layanan kepada peserta.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB VI -->
+        <div style="background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-light);overflow:hidden;" class="fade-in">
+          <div style="background:linear-gradient(90deg,var(--sky-dark),var(--sky));padding:16px 28px;display:flex;align-items:center;gap:14px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:.85rem;flex-shrink:0;">VI</div>
+            <div style="color:white;font-weight:700;font-size:1rem;">BAB VI — Perubahan Anggaran Dasar dan Pembubaran</div>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 15</span>
+              <span>Perubahan Anggaran Dasar dapat dilakukan melalui musyawarah pengurus yang dihadiri oleh sekurang-kurangnya 2/3 (dua pertiga) dari total pengurus aktif dan disahkan dengan keputusan bersama.</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 16</span>
+              <span>Pembubaran Lembaga hanya dapat dilakukan melalui keputusan musyawarah luar biasa, dengan mempertimbangkan seluruh kewajiban terhadap peserta aktif dan pemangku kepentingan lainnya.</span>
+            </div>
+            <div style="display:flex;gap:16px;font-size:.9rem;line-height:1.7;color:var(--dark-mid);">
+              <span style="color:var(--sky);font-weight:700;min-width:70px;">Pasal 17</span>
+              <span>Hal-hal yang belum diatur dalam Anggaran Dasar ini akan ditetapkan lebih lanjut dalam Anggaran Rumah Tangga dan peraturan pelaksana lainnya yang tidak bertentangan dengan Anggaran Dasar ini.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Penutup -->
+        <div style="background:linear-gradient(135deg,var(--sky-dark),var(--sky));border-radius:var(--radius-lg);padding:32px 36px;text-align:center;color:white;" class="fade-in">
+          <div style="font-size:1.5rem;margin-bottom:10px;">📜</div>
+          <p style="font-size:.92rem;line-height:1.8;color:rgba(255,255,255,0.9);">Anggaran Dasar ini ditetapkan dan mulai berlaku sejak tanggal pendirian LPK Transia Career.<br>Ditetapkan di <strong>Blora, Jawa Tengah</strong> — sebagai landasan tata kelola yang profesional dan bertanggung jawab.</p>
+          <div style="margin-top:20px;font-weight:700;font-size:1rem;color:white;">LPK Transia Career</div>
+          <div style="font-size:.85rem;color:rgba(255,255,255,0.7);margin-top:4px;">Jl. Gunung Lawu No. 78, Tempelan, Blora, Jawa Tengah</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER (shared, rendered via JS) -->
+<footer id="siteFooter">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="32" height="24" viewBox="0 0 80 60" fill="none"><path d="M8 48 Q10 20 40 20 Q70 20 72 48" stroke="#2a9d8f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M8 48 Q10 52 12 52 L68 52 Q70 52 72 48" stroke="#2a9d8f" stroke-width="4" fill="none"/><line x1="8" y1="44" x2="72" y2="44" stroke="#2a9d8f" stroke-width="3" stroke-linecap="round"/><circle cx="40" cy="18" r="10" fill="#E63027"/></svg>
+          <span class="footer-logo-text">Transia Career</span>
+        </div>
+        <p class="footer-desc">LPK resmi yang membantu putra-putri Indonesia mewujudkan impian berkarir di Jepang melalui program terstruktur dan terpercaya.</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <a class="social-btn" href="https://wa.me/6282326775115" target="_blank">💬</a>
+          <a class="social-btn" href="#" target="_blank">📸</a>
+          <a class="social-btn" href="mailto:Lpktransiacareer@gmail.com">✉️</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigasi</div>
+        <div class="footer-links">
+          <a onclick="navigate('home')">Beranda</a>
+          <a onclick="navigate('about')">Tentang Kami</a>
+          <a onclick="navigate('visi')">Visi & Misi</a>
+          <a onclick="navigate('program')">Program</a>
+          <a onclick="navigate('alur')">Alur Pendaftaran</a>
+          <a onclick="navigate('testimoni')">Testimoni</a>
+          <a onclick="navigate('daftar')">Daftar Sekarang</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Kontak</div>
+        <div class="footer-links">
+          <a>📞 0823-2677-5115</a>
+          <a>📱 0812-2934-8282</a>
+          <a>✉️ Lpktransiacareer@gmail.com</a>
+          <a>📸 @Lpktransia_career.id</a>
+          <a>📍 Jl. Gunung Lawu No.78<br>&nbsp;&nbsp;&nbsp;&nbsp;Tempelan, Blora</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 LPK Transia Career. All rights reserved.</span>
+      <span>🇮🇩 → 🇯🇵 Bersama Transia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── ROUTER ──────────────────────────────────
+const pages = ['home','about','visi','program','alur','testimoni','daftar'];
+
+function navigate(page) {
+  pages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.classList.toggle('active', p === page);
+  });
+  // update nav active
+  document.querySelectorAll('[data-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === page);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(initFadeIn, 100);
+}
+
+// ── NAVBAR SCROLL ─────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── MOBILE MENU ───────────────────────────
+function toggleMobile() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── FADE IN ───────────────────────────────
+function initFadeIn() {
+  const els = document.querySelectorAll('.page.active .fade-in');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+}
+document.addEventListener('DOMContentLoaded', initFadeIn);
+
+// ── TOAST ─────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── FORM SUBMIT ───────────────────────────
+async function submitForm() {
+  const nama = document.getElementById('f_nama').value.trim();
+  const gender = document.getElementById('f_gender').value;
+  const wa = document.getElementById('f_wa').value.trim();
+  const dob = document.getElementById('f_dob').value;
+  const kota = document.getElementById('f_kota').value.trim();
+  const pendidikan = document.getElementById('f_pendidikan').value;
+  const program = document.getElementById('f_program').value;
+  const tb = document.getElementById('f_tb').value;
+  const bb = document.getElementById('f_bb').value;
+  const pesan = document.getElementById('f_pesan').value.trim();
+  const agree = document.getElementById('f_agree').checked;
+
+  if (!nama || !gender || !wa || !dob || !kota || !pendidikan || !program) {
+    showToast('⚠️ Mohon lengkapi semua field wajib');
+    return;
+  }
+  if (!agree) {
+    showToast('⚠️ Centang persetujuan terlebih dahulu');
+    return;
+  }
+
+  const btn = document.getElementById('submitText');
+  btn.textContent = '⏳ Mengirim...';
+
+  // Simulate Supabase / API call (replace with real Supabase URL + anon key)
+  try {
+    await new Promise(r => setTimeout(r, 1200)); // simulated delay
+    // === SUPABASE INSERT (uncomment & fill when ready) ===
+    // await fetch('https://YOUR_PROJECT.supabase.co/rest/v1/pendaftaran', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'apikey': 'YOUR_ANON_KEY',
+    //     'Authorization': 'Bearer YOUR_ANON_KEY',
+    //     'Prefer': 'return=minimal'
+    //   },
+    //   body: JSON.stringify({ nama, gender, wa, dob, kota, pendidikan, program, tb, bb, pesan })
+    // });
+
+    // Show success
+    document.getElementById('formContent').style.display = 'none';
+    const succ = document.getElementById('formSuccess');
+    succ.style.display = 'block';
+    document.getElementById('successName').textContent = nama;
+
+    const waMsg = encodeURIComponent(
+      `Halo Transia Career! Saya ${nama} baru saja mengisi formulir pendaftaran online untuk program ${program}. Mohon info selanjutnya. Terima kasih!`
+    );
+    document.getElementById('successWaLink').href = `https://wa.me/6282326775115?text=${waMsg}`;
+
+  } catch(e) {
+    showToast('❌ Gagal mengirim. Coba lagi atau hubungi kami via WA.');
+    btn.textContent = '✍️ Kirim Pendaftaran';
+  }
+}
+</script>
+</body>
+</html>

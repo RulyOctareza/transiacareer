@@ -573,7 +573,7 @@ footer {
 }
 .mobile-menu a:hover { background: var(--sky-pale); color: var(--sky); }
 
-/* ── RESPONSIVE ─────────────────────────────────── */
+/* ── RESPONSIVE TABLET (≤900px) ─────────────────── */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-visual { display: none; }
@@ -593,10 +593,95 @@ footer {
   .hamburger { display: flex; }
   .nav-links { display: none; }
 }
+
+/* ── RESPONSIVE MOBILE (≤600px) ─────────────────── */
 @media (max-width: 600px) {
-  section { padding: 60px 5%; }
-  .stats-grid { grid-template-columns: repeat(2,1fr); }
-  .hero-stats { gap: 20px; }
+  /* Global */
+  section { padding: 52px 4%; }
+  .section-inner { width: 100%; }
+
+  /* Hero */
+  .hero { padding: 80px 4% 48px; }
+  .hero h1 { font-size: 2.1rem; }
+  .hero-sub { font-size: .95rem; }
+  .hero-buttons { flex-direction: column; gap: 10px; }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary { width: 100%; justify-content: center; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
+  .stat-num { font-size: 1.6rem; }
+  .hero-badge { font-size: .75rem; }
+
+  /* Stats strip */
+  .stats-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .stat-card-num { font-size: 2.2rem; }
+
+  /* Section headers */
+  .section-title { font-size: 1.6rem; }
+  .section-sub { font-size: .92rem; }
+
+  /* Programs */
+  .program-card-header { padding: 20px 20px 0; }
+  .program-card-body { padding: 16px 20px 20px; }
+  .program-name { font-size: 1.25rem; }
+
+  /* Alur */
+  .alur-item { padding-left: 56px; }
+  .alur-dot { width: 40px; height: 40px; font-size: 1rem; }
+  .alur-content { padding: 18px 20px; }
+  .alur-title { font-size: .97rem; }
+
+  /* About */
+  .about-visual { padding: 24px; }
+  .about-point { padding: 16px; }
+  .about-point-icon { width: 38px; height: 38px; }
+
+  /* Testimoni */
+  .testi-card { padding: 22px; }
+
+  /* Daftar / Form */
+  .daftar-form { padding: 24px 20px; }
+  .form-title { font-size: 1.2rem; }
+  .contact-item { padding: 12px; }
+
+  /* Visi Misi — cards */
+  .visi-misi-card { padding: 24px 18px !important; }
+  .visi-flex { flex-direction: column !important; gap: 14px !important; }
+  .visi-icon { width: 44px !important; height: 44px !important; font-size: 1.2rem !important; }
+
+  /* Core values grid 2 kolom di mobile */
+  .core-values-grid { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; }
+
+  /* AD/ART — setiap bab container */
+  #page-visi .fade-in > div[style*="padding:28px"] { padding: 18px !important; }
+  #page-visi div[style*="padding:16px 28px"] { padding: 14px 16px !important; font-size:.85rem !important; }
+
+  /* AD/ART — tiap pasal row jadi kolom */
+  #page-visi div[style*="display:flex;gap:16px;font-size:.9rem"] {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+  #page-visi span[style*="min-width:70px"] {
+    min-width: unset !important;
+    font-size: .78rem !important;
+  }
+
+  /* Program kelas grid */
+  #page-program div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Navbar */
+  nav { padding: 0 4%; }
+  .nav-logo-text { font-size: 1.1rem; }
+
+  /* Footer */
+  footer { padding: 48px 4% 24px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .footer-social { justify-content: center; }
+
+  /* Buttons */
+  .btn-primary, .btn-secondary { padding: 13px 22px; font-size: .9rem; }
+  .btn-submit { padding: 14px; font-size: .95rem; }
 }
 </style>
 </head>
@@ -1353,11 +1438,11 @@ footer {
       <p class="section-sub">Landasan nilai dan tata kelola yang menjadi kompas Transia Career dalam menjalankan misi mulianya.</p>
 
       <!-- VISI -->
-      <div style="margin-top:56px;background:var(--white);border-radius:var(--radius-lg);padding:48px;border:1px solid var(--gray-light);box-shadow:var(--shadow-md);position:relative;overflow:hidden;" class="fade-in">
+      <div class="visi-misi-card fade-in" style="margin-top:56px;background:var(--white);border-radius:var(--radius-lg);padding:48px;border:1px solid var(--gray-light);box-shadow:var(--shadow-md);position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--sky),var(--sky-dark));border-radius:var(--radius-lg) var(--radius-lg) 0 0;"></div>
         <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;font-weight:900;color:rgba(59,158,208,0.04);font-family:var(--font-display);line-height:1;pointer-events:none;">VISI</div>
-        <div style="display:flex;align-items:flex-start;gap:24px;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--sky-pale);border:2px solid rgba(59,158,208,0.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🔭</div>
+        <div class="visi-flex" style="display:flex;align-items:flex-start;gap:24px;">
+          <div class="visi-icon" style="width:56px;height:56px;border-radius:14px;background:var(--sky-pale);border:2px solid rgba(59,158,208,0.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🔭</div>
           <div>
             <div class="section-tag" style="margin-bottom:10px;">Visi</div>
             <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--dark);line-height:1.4;margin-bottom:16px;">"Menjadi Lembaga Pelatihan Kerja Luar Negeri Terpercaya yang Mengantarkan Generasi Indonesia Berdaya Saing Global di Jepang."</h3>
@@ -1367,11 +1452,11 @@ footer {
       </div>
 
       <!-- MISI -->
-      <div style="margin-top:28px;background:var(--white);border-radius:var(--radius-lg);padding:48px;border:1px solid var(--gray-light);box-shadow:var(--shadow-md);position:relative;overflow:hidden;" class="fade-in">
+      <div class="visi-misi-card fade-in" style="margin-top:28px;background:var(--white);border-radius:var(--radius-lg);padding:48px;border:1px solid var(--gray-light);box-shadow:var(--shadow-md);position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--red-dark));border-radius:var(--radius-lg) var(--radius-lg) 0 0;"></div>
         <div style="position:absolute;bottom:-20px;right:-10px;font-size:8rem;font-weight:900;color:rgba(230,48,39,0.04);font-family:var(--font-display);line-height:1;pointer-events:none;">MISI</div>
-        <div style="display:flex;align-items:flex-start;gap:24px;">
-          <div style="width:56px;height:56px;border-radius:14px;background:#fff5f5;border:2px solid rgba(230,48,39,0.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🎯</div>
+        <div class="visi-flex" style="display:flex;align-items:flex-start;gap:24px;">
+          <div class="visi-icon" style="width:56px;height:56px;border-radius:14px;background:#fff5f5;border:2px solid rgba(230,48,39,0.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🎯</div>
           <div style="flex:1;">
             <div class="section-tag" style="margin-bottom:16px;color:var(--red);">
               <span style="width:20px;height:2px;background:var(--red);border-radius:2px;display:inline-block;margin-right:6px;vertical-align:middle;"></span>Misi
@@ -1408,7 +1493,7 @@ footer {
           <div class="section-tag" style="justify-content:center;">Nilai Inti</div>
           <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--dark);">Core Values <em style="color:var(--sky);">Transia Career</em></h3>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <div class="core-values-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
           <div style="background:var(--white);border-radius:var(--radius);padding:24px 20px;border:1px solid var(--gray-light);text-align:center;transition:.2s;" onmouseover="this.style.borderColor='var(--sky)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--gray-light)';this.style.transform='translateY(0)'">
             <div style="font-size:2rem;margin-bottom:10px;">🤝</div>
             <div style="font-weight:700;color:var(--dark);margin-bottom:6px;">Integritas</div>

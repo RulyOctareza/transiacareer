@@ -1810,20 +1810,28 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
+// ── SUPABASE CONFIG ───────────────────────
+// Ganti dengan credentials kamu dari Supabase Dashboard → Settings → API
+const SUPABASE_URL  = 'https://ehdcbkdpnjjtizmqieyh.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVoZGNia2RwbmpqdGl6bXFpZXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NjEyNDEsImV4cCI6MjA5NDIzNzI0MX0.OqDQR4TRIHYa4PWZSKZlkFG467C02wQRGLOebaprb3k';
+const WA_ADMIN      = '6282326775115';
+
 // ── FORM SUBMIT ───────────────────────────
 async function submitForm() {
-  const nama = document.getElementById('f_nama').value.trim();
-  const gender = document.getElementById('f_gender').value;
-  const wa = document.getElementById('f_wa').value.trim();
-  const dob = document.getElementById('f_dob').value;
-  const kota = document.getElementById('f_kota').value.trim();
-  const pendidikan = document.getElementById('f_pendidikan').value;
-  const program = document.getElementById('f_program').value;
-  const tb = document.getElementById('f_tb').value;
-  const bb = document.getElementById('f_bb').value;
-  const pesan = document.getElementById('f_pesan').value.trim();
-  const agree = document.getElementById('f_agree').checked;
+  // Ambil semua nilai form
+  const nama      = document.getElementById('f_nama').value.trim();
+  const gender    = document.getElementById('f_gender').value;
+  const wa        = document.getElementById('f_wa').value.trim();
+  const dob       = document.getElementById('f_dob').value;
+  const kota      = document.getElementById('f_kota').value.trim();
+  const pendidikan= document.getElementById('f_pendidikan').value;
+  const program   = document.getElementById('f_program').value;
+  const tb        = document.getElementById('f_tb').value || null;
+  const bb        = document.getElementById('f_bb').value || null;
+  const pesan     = document.getElementById('f_pesan').value.trim();
+  const agree     = document.getElementById('f_agree').checked;
 
+  // Validasi field wajib
   if (!nama || !gender || !wa || !dob || !kota || !pendidikan || !program) {
     showToast('⚠️ Mohon lengkapi semua field wajib');
     return;
@@ -1833,38 +1841,119 @@ async function submitForm() {
     return;
   }
 
+  // Validasi format WA
+  const waClean = wa.replace(/\D/g, '');
+  if (waClean.length < 10 || waClean.length > 15) {
+    showToast('⚠️ Nomor WhatsApp tidak valid');
+    return;
+  }
+
   const btn = document.getElementById('submitText');
-  btn.textContent = '⏳ Mengirim...';
+  btn.textContent = '⏳ Menyimpan data...';
+  btn.parentElement.disabled = true;
 
-  // Simulate Supabase / API call (replace with real Supabase URL + anon key)
   try {
-    await new Promise(r => setTimeout(r, 1200)); // simulated delay
-    // === SUPABASE INSERT (uncomment & fill when ready) ===
-    // await fetch('https://YOUR_PROJECT.supabase.co/rest/v1/pendaftaran', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'apikey': 'YOUR_ANON_KEY',
-    //     'Authorization': 'Bearer YOUR_ANON_KEY',
-    //     'Prefer': 'return=minimal'
-    //   },
-    //   body: JSON.stringify({ nama, gender, wa, dob, kota, pendidikan, program, tb, bb, pesan })
-    // });
+    // ── STEP 1: Simpan ke Supabase ─────────
+    const supabaseReady = 
+      SUPABASE_URL !== 'GANTI_DENGAN_PROJECT_URL' && 
+      SUPABASE_KEY !== 'GANTI_DENGAN_ANON_KEY';
 
-    // Show success
+    if (supabaseReady) {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/pendaftaran`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          nama,
+          gender,
+          wa: waClean,
+          tanggal_lahir: dob || null,
+          kota,
+          pendidikan,
+          program,
+          tinggi_badan: tb ? parseInt(tb) : null,
+          berat_badan:  bb ? parseInt(bb) : null,
+          pesan: pesan || null,
+          status: 'baru'
+        })
+      });
+
+      if (!res.ok) {
+        const errBody = await res.text();
+        console.error('Supabase error:', res.status, errBody);
+        throw new Error('Supabase insert gagal: ' + res.status);
+      }
+    } else {
+      // Supabase belum dikonfigurasi — simulasi delay
+      console.warn('⚠️ Supabase belum dikonfigurasi. Ganti SUPABASE_URL dan SUPABASE_KEY.');
+      await new Promise(r => setTimeout(r, 800));
+    }
+
+    // ── STEP 2: Bangun pesan WA admin ──────
+    // Pesan notifikasi detail ke admin
+    const tgl = new Date().toLocaleDateString('id-ID', {
+      day: '2-digit', month: 'long', year: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+
+    const waAdminMsg = encodeURIComponent(
+`🔔 *PENDAFTARAN BARU — Transia Career*
+━━━━━━━━━━━━━━━━━━━
+📋 *Data Pendaftar:*
+• Nama        : ${nama}
+• Jenis Kelamin: ${gender}
+• WhatsApp    : ${waClean}
+• Tgl Lahir   : ${dob || '-'}
+• Kota Asal   : ${kota}
+• Pendidikan  : ${pendidikan}
+• Program     : ${program}
+• TB / BB     : ${tb || '-'} cm / ${bb || '-'} kg
+• Pesan       : ${pesan || '-'}
+━━━━━━━━━━━━━━━━━━━
+🕐 Waktu daftar: ${tgl}
+✅ Data sudah tersimpan di database.`
+    );
+
+    // Pesan sukses ke user (dari sudut pandang user)
+    const waUserMsg = encodeURIComponent(
+`Halo Transia Career! 👋
+
+Saya *${nama}* baru saja mengisi formulir pendaftaran online untuk program *${program}*.
+
+Data saya:
+• Kota: ${kota}
+• Pendidikan: ${pendidikan}
+• No. WA: ${waClean}
+
+Mohon konfirmasi dan info langkah selanjutnya. Terima kasih! 🙏`
+    );
+
+    // ── STEP 3: Tampilkan halaman sukses ───
     document.getElementById('formContent').style.display = 'none';
     const succ = document.getElementById('formSuccess');
     succ.style.display = 'block';
     document.getElementById('successName').textContent = nama;
 
-    const waMsg = encodeURIComponent(
-      `Halo Transia Career! Saya ${nama} baru saja mengisi formulir pendaftaran online untuk program ${program}. Mohon info selanjutnya. Terima kasih!`
-    );
-    document.getElementById('successWaLink').href = `https://wa.me/6282326775115?text=${waMsg}`;
+    // Tombol WA untuk user (chat ke admin)
+    document.getElementById('successWaLink').href =
+      `https://wa.me/${WA_ADMIN}?text=${waUserMsg}`;
+
+    // Otomatis buka WA admin dengan notif data lengkap (setelah 1.5 detik)
+    setTimeout(() => {
+      window.open(`https://wa.me/${WA_ADMIN}?text=${waAdminMsg}`, '_blank');
+    }, 1500);
+
+    showToast('✅ Pendaftaran berhasil disimpan!');
 
   } catch(e) {
-    showToast('❌ Gagal mengirim. Coba lagi atau hubungi kami via WA.');
+    console.error('Submit error:', e);
+    showToast('❌ Gagal menyimpan. Coba lagi atau hubungi kami via WA.');
     btn.textContent = '✍️ Kirim Pendaftaran';
+    btn.parentElement.disabled = false;
   }
 }
 </script>

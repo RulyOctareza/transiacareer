@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+
+const alumni = [
+  { initials:'AS', name:'Ahmad Santoso', role:'Aichi, Jepang 🇯🇵', program:'SSW / TG', badge:'badge-ssw', color:'', text:'"Berkat Transia Career, saya sekarang bekerja di pabrik otomotif di Aichi. Proses bimbingannya sangat profesional dan transparan dari awal sampai berangkat."' },
+  { initials:'DR', name:'Dewi Rahayu', role:'Osaka, Jepang 🇯🇵', program:'Magang', badge:'badge-magang', color:'background:linear-gradient(135deg,var(--red),var(--red-dark))', text:'"Awalnya ragu, tapi setelah konsultasi langsung ke LPK-nya, saya mantap daftar. Alhamdulillah sudah 1,5 tahun di Osaka, kerja di perusahaan makanan."' },
+  { initials:'BP', name:'Budi Prasetyo', role:'Nagoya, Jepang 🇯🇵', program:'SSW / TG', badge:'badge-ssw', color:'background:linear-gradient(135deg,#2a9d8f,#1a7a6a)', text:'"Tim Transia sangat membantu dalam pengurusan dokumen COE dan VISA. Tidak ada biaya tersembunyi. Semua transparan dari awal sampai akhir."' },
+  { initials:'RW', name:'Rina Wulandari', role:'Saitama, Jepang 🇯🇵', program:'SSW / TG', badge:'badge-ssw', color:'background:linear-gradient(135deg,#7c3aed,#5b21b6)', text:'"Sensei-sensei bahasa Jepangnya sangat sabar dan komunikatif. Dalam 3 bulan saya bisa lulus JFT. Rekomendasi banget buat yang mau serius ke Jepang."' },
+  { initials:'FH', name:'Fajar Hidayat', role:'Tokyo, Jepang 🇯🇵', program:'SSW / TG', badge:'badge-ssw', color:'background:linear-gradient(135deg,#d97706,#b45309)', text:'"Proses matching job-nya cepat dan tepat. Saya ditempatkan di perusahaan konstruksi yang bagus di Tokyo. Gaji sesuai standar Jepang, puas banget."' },
+  { initials:'SN', name:'Siti Nurhaliza', role:'Hiroshima, Jepang 🇯🇵', program:'Magang', badge:'badge-magang', color:'background:linear-gradient(135deg,var(--red),#7c3aed)', text:'"Dari Blora langsung bisa ke Jepang, siapa yang sangka! Transia benar-benar mewujudkan mimpi saya. Sekarang sudah tahun ke-2 magang di pabrik elektronik."' },
+]
+---
+
+<Base
+  title="Testimoni Alumni Transia Career | Sukses Kerja di Jepang"
+  description="Kisah nyata alumni Transia Career yang kini berkarir di Jepang — dari Aichi, Osaka, Nagoya, Tokyo, hingga Hiroshima. Bergabung dan wujudkan impianmu!"
+  canonical="https://transiacareer.id/testimoni"
+>
+  <Navbar activePage="testimoni" />
+
+  <section style="padding-top:110px;padding-bottom:80px;padding-left:5%;padding-right:5%;background:var(--off-white);">
+    <div class="section-inner">
+      <div class="section-tag">Testimoni Alumni</div>
+      <h1 class="section-title">Mereka yang Sudah <em>Membuktikan</em></h1>
+      <p class="section-sub">Cerita nyata dari alumni Transia Career yang kini berkarir sukses di Jepang.</p>
+
+      <div class="testi-grid">
+        {alumni.map(a => (
+          <div class="testi-card fade-in">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">{a.text}</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style={a.color}>{a.initials}</div>
+              <div>
+                <div class="testi-name">{a.name}</div>
+                <div class="testi-role">{a.role}</div>
+                <span class={`testi-badge ${a.badge}`}>{a.program}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style="text-align:center;margin-top:60px;">
+        <p style="color:var(--gray);margin-bottom:20px;">Ingin jadi alumni sukses berikutnya?</p>
+        <a class="btn-primary" href="/daftar">✍️ Daftar Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

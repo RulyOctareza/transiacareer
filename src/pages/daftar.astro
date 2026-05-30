@@ -1,0 +1,226 @@
+---
+import Base from '../layouts/Base.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+
+const WA_ADMIN = '6282326775115'
+const SUPABASE_URL = 'https://ehdcbkdpnjjtizmqieyh.supabase.co'
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVoZGNia2RwbmpqdGl6bXFpZXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NjEyNDEsImV4cCI6MjA5NDIzNzI0MX0.OqDQR4TRIHYa4PWZSKZlkFG467C02wQRGLOebaprb3k'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Formulir Pendaftaran Transia Career',
+  description: 'Daftar program kerja ke Jepang jalur SSW dan Magang di LPK Transia Career Blora.',
+  url: 'https://transiacareer.id/daftar',
+}
+---
+
+<Base
+  title="Daftar Program Kerja ke Jepang | Transia Career"
+  description="Isi formulir pendaftaran program kerja ke Jepang SSW atau Magang di LPK Transia Career. Gratis, mudah, dan tim kami menghubungi dalam 1×24 jam."
+  canonical="https://transiacareer.id/daftar"
+  jsonLd={jsonLd}
+>
+  <Navbar activePage="daftar" />
+
+  <section class="daftar-section" style="padding-top:110px;">
+    <div class="section-inner">
+      <div class="daftar-inner">
+        <div class="daftar-info">
+          <div class="section-tag">Pendaftaran Online</div>
+          <h1 class="section-title">Daftar <em>Sekarang</em></h1>
+          <p class="section-sub">Isi formulir dengan lengkap dan jujur. Tim kami akan menghubungi kamu dalam 1×24 jam untuk proses selanjutnya.</p>
+
+          <div style="margin-top:36px;">
+            <div style="font-weight:700;color:var(--dark);margin-bottom:16px;">✅ Persyaratan Umum</div>
+            <div class="req-list">
+              <div class="req-item"><div class="req-check">✓</div>Laki-laki / Perempuan</div>
+              <div class="req-item"><div class="req-check">✓</div>Minimal Pendidikan SMA / Sederajat</div>
+              <div class="req-item"><div class="req-check">✓</div>Usia 18 – 30 Tahun <span style="font-size:.82rem;color:var(--gray);">(Khusus IM 18–26 Tahun)</span></div>
+              <div class="req-item"><div class="req-check">✓</div>Tidak Bertato dan Bertindik (berlebihan)</div>
+              <div class="req-item"><div class="req-check">✓</div>Sehat Jasmani dan Rohani</div>
+              <div class="req-item"><div class="req-check">✓</div>Tidak Buta Warna</div>
+              <div class="req-item"><div class="req-check">✓</div>TB Minimal 158 cm (Laki-laki) / 150 cm (Perempuan)</div>
+              <div class="req-item"><div class="req-check">✓</div>Berat Badan Proporsional</div>
+            </div>
+          </div>
+
+          <div style="margin-top:28px;">
+            <div style="font-weight:700;color:var(--dark);margin-bottom:16px;">🏆 Persyaratan Tokutei Ginou (SSW/TG)</div>
+            <div class="req-list">
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Laki-laki / Perempuan</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Minimal Pendidikan SMA / Sederajat</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Usia 18 – 35 Tahun</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Tidak Bertato dan Bertindik</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Sehat Jasmani dan Rohani</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Tidak Buta Warna</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>TB Minimal 158 cm / 150 cm (Perempuan)</div>
+              <div class="req-item"><div class="req-check" style="border-color:var(--sky-dark);color:var(--sky-dark);">✓</div>Berat Badan Proporsional</div>
+            </div>
+          </div>
+
+          <div style="margin-top:28px;background:linear-gradient(135deg,#fff7ed,#fff);border-radius:var(--radius);padding:20px 24px;border:2px solid #f59e0b;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:1.4rem;">💰</span>
+              <div style="font-weight:700;color:var(--dark);font-size:1rem;">Tersedia Dana Talangan</div>
+            </div>
+            <p style="font-size:.88rem;color:var(--gray);line-height:1.6;">Kami menyediakan fasilitas dana talangan bagi peserta yang membutuhkan dukungan biaya keberangkatan. Hubungi tim kami untuk informasi lebih lanjut.</p>
+          </div>
+
+          <div class="daftar-contact">
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">📞 Hubungi Kami Langsung</div>
+            <div class="contact-item"><span class="contact-icon">💬</span><div><div class="contact-label">WhatsApp / Telepon</div><div class="contact-val">0823-2677-5115</div></div></div>
+            <div class="contact-item"><span class="contact-icon">📧</span><div><div class="contact-label">Email</div><div class="contact-val">Lpktransiacareer@gmail.com</div></div></div>
+            <div class="contact-item"><span class="contact-icon">📍</span><div><div class="contact-label">Alamat LPK</div><div class="contact-val">Jl. Gunung Lawu No.78 Tempelan, Blora</div></div></div>
+          </div>
+        </div>
+
+        <div class="daftar-form">
+          <div id="formContent">
+            <div class="form-title">Formulir Pendaftaran</div>
+            <div class="form-sub">Batch 1 — Hanya 15 peserta. Segera daftarkan dirimu!</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nama Lengkap <span>*</span></label>
+                <input type="text" class="form-input" id="f_nama" placeholder="Nama sesuai KTP">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Jenis Kelamin <span>*</span></label>
+                <select class="form-select" id="f_gender">
+                  <option value="">Pilih...</option>
+                  <option>Laki-laki</option>
+                  <option>Perempuan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nomor WhatsApp <span>*</span></label>
+                <input type="tel" class="form-input" id="f_wa" placeholder="08xxxxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tanggal Lahir <span>*</span></label>
+                <input type="date" class="form-input" id="f_dob">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Kota / Kabupaten Asal <span>*</span></label>
+              <input type="text" class="form-input" id="f_kota" placeholder="Contoh: Blora, Jawa Tengah">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Pendidikan Terakhir <span>*</span></label>
+                <select class="form-select" id="f_pendidikan">
+                  <option value="">Pilih...</option>
+                  <option>SMA / SMK / MA</option>
+                  <option>D3</option>
+                  <option>S1</option>
+                  <option>S2</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Pilihan Program <span>*</span></label>
+                <select class="form-select" id="f_program">
+                  <option value="">Pilih...</option>
+                  <option>SSW / Tokutei Ginouou (TG)</option>
+                  <option>Magang / Gino Jisshu</option>
+                  <option>Belum Tahu / Ingin Konsultasi</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Tinggi Badan (cm)</label>
+                <input type="number" class="form-input" id="f_tb" placeholder="Contoh: 165">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Berat Badan (kg)</label>
+                <input type="number" class="form-input" id="f_bb" placeholder="Contoh: 60">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pertanyaan / Pesan (opsional)</label>
+              <textarea class="form-textarea" id="f_pesan" placeholder="Ada yang ingin kamu tanyakan? Tulis di sini..."></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="f_agree">
+              <label for="f_agree">Saya menyatakan bahwa data yang saya isi adalah benar, dan saya bersedia dihubungi oleh tim Transia Career untuk proses selanjutnya.</label>
+            </div>
+
+            <button class="btn-submit" id="submitBtn" onclick="submitForm()">
+              <span id="submitText">✍️ Kirim Pendaftaran</span>
+            </button>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">🎉</div>
+            <div class="success-title">Pendaftaran Terkirim!</div>
+            <p class="success-msg">Terima kasih, <strong id="successName"></strong>!<br>Tim Transia Career akan menghubungi kamu via WhatsApp dalam 1×24 jam.<br><br>Sambil menunggu, kamu bisa chat langsung dengan kami:</p>
+            <a class="success-wa" id="successWaLink" href="#" target="_blank">💬 Chat WhatsApp Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<script define:vars={{ WA_ADMIN, SUPABASE_URL, SUPABASE_KEY }}>
+async function submitForm() {
+  const nama       = document.getElementById('f_nama').value.trim()
+  const gender     = document.getElementById('f_gender').value
+  const wa         = document.getElementById('f_wa').value.trim()
+  const dob        = document.getElementById('f_dob').value
+  const kota       = document.getElementById('f_kota').value.trim()
+  const pendidikan = document.getElementById('f_pendidikan').value
+  const program    = document.getElementById('f_program').value
+  const tb         = document.getElementById('f_tb').value || null
+  const bb         = document.getElementById('f_bb').value || null
+  const pesan      = document.getElementById('f_pesan').value.trim()
+  const agree      = document.getElementById('f_agree').checked
+
+  if (!nama || !gender || !wa || !dob || !kota || !pendidikan || !program) { alert('Mohon lengkapi semua field yang wajib diisi (*)'); return }
+  if (!agree) { alert('Mohon centang persetujuan terlebih dahulu.'); return }
+
+  const waClean = wa.replace(/\D/g, '').replace(/^0/, '62')
+  const btn = document.getElementById('submitBtn')
+  btn.disabled = true
+  document.getElementById('submitText').textContent = '⏳ Mengirim...'
+
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/pendaftaran`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}`, 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ nama, gender, wa: waClean, tanggal_lahir: dob || null, kota, pendidikan, program, tinggi_badan: tb ? parseInt(tb) : null, berat_badan: bb ? parseInt(bb) : null, pesan: pesan || null, status: 'baru' }),
+    })
+
+    const tgl = new Date().toLocaleDateString('id-ID', { day:'2-digit', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' })
+    const waAdminMsg = encodeURIComponent(`🔔 *PENDAFTARAN BARU — Transia Career*\n━━━━━━━━━━━━━━━━━━━\n📋 *Data Pendaftar:*\n• Nama        : ${nama}\n• Jenis Kelamin: ${gender}\n• WhatsApp    : ${waClean}\n• Tgl Lahir   : ${dob || '-'}\n• Kota Asal   : ${kota}\n• Pendidikan  : ${pendidikan}\n• Program     : ${program}\n• TB / BB     : ${tb || '-'} cm / ${bb || '-'} kg\n• Pesan       : ${pesan || '-'}\n━━━━━━━━━━━━━━━━━━━\n🕐 Waktu daftar: ${tgl}\n✅ Data sudah tersimpan di database.`)
+    const waUserMsg  = encodeURIComponent(`Halo Transia Career! 👋\n\nSaya *${nama}* baru saja mengisi formulir pendaftaran online untuk program *${program}*.\n\nData saya:\n• Kota: ${kota}\n• Pendidikan: ${pendidikan}\n• No. WA: ${waClean}\n\nMohon konfirmasi dan info langkah selanjutnya. Terima kasih! 🙏`)
+
+    document.getElementById('formContent').style.display = 'none'
+    const succ = document.getElementById('formSuccess')
+    succ.style.display = 'block'
+    document.getElementById('successName').textContent = nama
+    document.getElementById('successWaLink').href = `https://wa.me/${WA_ADMIN}?text=${waUserMsg}`
+
+    setTimeout(() => window.open(`https://wa.me/${WA_ADMIN}?text=${waAdminMsg}`, '_blank'), 1500)
+    window.showToast?.('✅ Pendaftaran berhasil disimpan!')
+  } catch (e) {
+    alert('Terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.')
+    btn.disabled = false
+    document.getElementById('submitText').textContent = '✍️ Kirim Pendaftaran'
+  }
+}
+
+window.submitForm = submitForm
+</script>

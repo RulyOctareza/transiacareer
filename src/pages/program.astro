@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Base
+  title="Program SSW & Magang Jepang | Transia Career"
+  description="Dua jalur resmi kerja ke Jepang: SSW (Specified Skill Worker) dengan gaji ¥150k–¥250k/bulan, dan Magang Teknis (Gino Jisshu) 3 tahun. Daftar di Transia Career Blora."
+  canonical="https://transiacareer.id/program"
+>
+  <Navbar activePage="program" />
+
+  <section style="padding-top: 110px; padding-bottom: 80px; padding-left: 5%; padding-right: 5%; background: var(--off-white);">
+    <div class="section-inner">
+      <div class="section-tag">Program Kami</div>
+      <h1 class="section-title">Dua Jalur Menuju <em>Jepang</em></h1>
+      <p class="section-sub">Pilih jalur yang sesuai dengan profil, kemampuan, dan tujuan karir kamu di Jepang.</p>
+
+      <div class="programs-grid">
+        <div class="program-card" style="cursor:default;">
+          <div class="program-card-header">
+            <span class="program-tag tag-ssw">Jalur SSW / TG</span>
+            <span class="program-icon">🏆</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Tokutei Ginouou (TG)</div>
+            <div class="program-jp">Specified Skill Worker — 特定技能</div>
+            <p class="program-desc">Program pekerja terampil resmi Pemerintah Jepang. Peserta akan mengikuti ujian bahasa Jepang (JFT-Basic) dan ujian skill sesuai bidang pekerjaan. Visa dapat diperpanjang dan membuka peluang karir jangka panjang.</p>
+            <div class="program-features">
+              <div class="pf-item">Ujian JFT-Basic (Bahasa Jepang N4)</div>
+              <div class="pf-item">Ujian SSW sesuai bidang (manufaktur, pertanian, dll)</div>
+              <div class="pf-item">Kontrak kerja langsung dengan perusahaan Jepang</div>
+              <div class="pf-item">Gaji setara standar minimum Jepang</div>
+              <div class="pf-item">Masa kerja 5 tahun, bisa diperpanjang</div>
+              <div class="pf-item">Bisa bawa keluarga (SSW-2)</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Gaji per Bulan</div><div class="ps-val">¥150.000 – ¥250.000</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card card-magang" style="cursor:default;">
+          <div class="program-card-header">
+            <span class="program-tag tag-magang">Jalur Magang</span>
+            <span class="program-icon">🎓</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Gino Jisshu</div>
+            <div class="program-jp">Praktik Kerja Teknis — 技能実習</div>
+            <p class="program-desc">Program magang teknis resmi yang memungkinkan peserta bekerja dan belajar langsung di perusahaan Jepang selama 3 tahun. Cocok untuk fresh graduate yang ingin mendapatkan pengalaman kerja internasional dan skill teknis tinggi.</p>
+            <div class="program-features">
+              <div class="pf-item">Pelatihan bahasa Jepang intensif</div>
+              <div class="pf-item">Durasi 3 tahun di perusahaan Jepang</div>
+              <div class="pf-item">Akomodasi dan makan disediakan perusahaan</div>
+              <div class="pf-item">Tiket keberangkatan dibantu</div>
+              <div class="pf-item">Asuransi kesehatan ditanggung</div>
+              <div class="pf-item">Bisa lanjut ke jalur SSW setelah selesai</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Allowance per Bulan</div><div class="ps-val" style="color:var(--red);">¥80.000 – ¥150.000</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:60px;background:var(--white);border-radius:var(--radius-lg);padding:40px;border:1px solid var(--gray-light);">
+        <div class="section-tag" style="margin-bottom:12px;">Jadwal Kelas di LPK</div>
+        <h2 style="font-family:var(--font-display);font-size:1.6rem;color:var(--dark);margin-bottom:24px;">Program <em style="color:var(--sky);">Kelas Training</em> 3–4 Bulan</h2>
+        <div class="program-kelas-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+          <div style="background:var(--sky-pale);border-radius:12px;padding:20px;border:1px solid rgba(59,158,208,0.2);">
+            <div style="font-size:1.5rem;margin-bottom:8px;">📚</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">Program Bahasa</div>
+            <div style="font-size:.85rem;color:var(--gray);">Senin – Jum'at, 08:00 – 16:00</div>
+            <div style="font-size:.83rem;color:var(--sky-dark);margin-top:6px;font-weight:600;">Intensif setiap hari</div>
+          </div>
+          <div style="background:#fff5f5;border-radius:12px;padding:20px;border:1px solid rgba(230,48,39,0.1);">
+            <div style="font-size:1.5rem;margin-bottom:8px;">💪</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">Fisik & Olahraga</div>
+            <div style="font-size:.85rem;color:var(--gray);">Setiap Sabtu</div>
+            <div style="font-size:.83rem;color:var(--red);margin-top:6px;font-weight:600;">Persiapan medical check</div>
+          </div>
+          <div style="background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid rgba(34,197,94,0.2);">
+            <div style="font-size:1.5rem;margin-bottom:8px;">📝</div>
+            <div style="font-weight:700;color:var(--dark);margin-bottom:4px;">Persiapan Ujian</div>
+            <div style="font-size:.85rem;color:var(--gray);">JFT & SSW Mock Test</div>
+            <div style="font-size:.83rem;color:#16a34a;margin-top:6px;font-weight:600;">Simulasi ujian berkala</div>
+          </div>
+        </div>
+
+        <div style="margin-top:28px;background:linear-gradient(135deg,var(--dark) 0%,var(--dark-mid) 100%);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:12px;right:16px;background:var(--red);color:white;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;">Coming Soon</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <span style="font-size:1.6rem;">🌙</span>
+            <div style="font-family:var(--font-display);font-size:1.2rem;color:white;font-weight:700;">Kelas Karyawan</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.9rem;color:rgba(255,255,255,0.5);">🕣</span><span style="font-size:.9rem;color:rgba(255,255,255,0.85);">Pukul 19:30 – 23:30 WIB</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.9rem;color:rgba(255,255,255,0.5);">📅</span><span style="font-size:.9rem;color:rgba(255,255,255,0.85);">Week Days (Hari Kerja)</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:.9rem;color:rgba(255,255,255,0.5);">⏳</span><span style="font-size:.9rem;color:rgba(255,255,255,0.85);">Program Pendidikan 4–5 Bulan</span></div>
+          </div>
+          <p style="font-size:.83rem;color:rgba(255,255,255,0.5);margin-top:14px;">Cocok untuk kamu yang masih bekerja dan ingin mempersiapkan diri ke Jepang di waktu malam.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a class="btn-primary" href="/daftar">✍️ Daftar Program Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

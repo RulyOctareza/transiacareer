@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro'
+import Navbar from '../../components/Navbar.astro'
+import Footer from '../../components/Footer.astro'
+import { getPublishedPosts, getPostBySlug } from '../../lib/supabase'
+import { tiptapToHtml, estimateReadTime } from '../../lib/tiptap'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPublishedPosts().catch(() => [])
+  return posts.map(p => ({ params: { slug: p.slug }, props: { post: p, allPosts: posts } }))
+}
+
+const { post, allPosts } = Astro.props
+const contentHtml = tiptapToHtml(post.content)
+const readTime = estimateReadTime(post.content)
+
+const related = allPosts
+  .filter(p => p.id !== post.id && p.category === post.category)
+  .slice(0, 3)
+
+function fmtDate(str: string) {
+  return new Date(str).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
+const catLabels: Record<string, string> = { tips: 'Tips', berita: 'Berita', jepang: 'Info Jepang', umum: 'Umum' }
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt ?? '',
+  image: post.featured_image ?? 'https://transiacareer.id/og-image.jpg',
+  datePublished: post.published_at ?? post.created_at,
+  dateModified: post.published_at ?? post.created_at,
+  author: { '@type': 'Organization', name: 'Transia Career', url: 'https://transiacareer.id' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LPK Transia Career',
+    logo: { '@type': 'ImageObject', url: 'https://transiacareer.id/favicon-192.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://transiacareer.id/blog/${post.slug}` },
+  keywords: (post.tags ?? []).join(', '),
+}
+---
+
+<Base
+  title={`${post.title} | Transia Career`}
+  description={post.excerpt ?? `Baca artikel "${post.title}" di blog Transia Career — informasi dan tips kerja ke Jepang.`}
+  ogImage={post.featured_image ?? 'https://transiacareer.id/og-image.jpg'}
+  ogType="article"
+  canonical={`https://transiacareer.id/blog/${post.slug}`}
+  publishedAt={post.published_at ?? post.created_at}
+  jsonLd={jsonLd}
+>
+  <Navbar activePage="blog" />
+
+  <div style="padding-top:88px;">
+    <div style="max-width:1200px;margin:0 auto;padding:24px 5% 0;">
+      <a href="/blog" class="blog-back-btn">← Kembali ke Artikel</a>
+    </div>
+
+    {post.featured_image && (
+      <div class="blog-detail-hero">
+        <img src={post.featured_image} alt={post.title} loading="eager">
+      </div>
+    )}
+
+    <div class="blog-detail-layout">
+      <article class="blog-detail-article">
+        <span class={`blog-cat-badge blog-cat-${post.category}`}>{catLabels[post.category] ?? post.category}</span>
+        <h1 class="blog-detail-title">{post.title}</h1>
+        <div class="blog-detail-meta">
+          <span>✍ Tim Transia Career</span>
+          <span style="color:var(--gray-light)">·</span>
+          <span>{fmtDate(post.published_at ?? post.created_at)}</span>
+          <span style="color:var(--gray-light)">·</span>
+          <span>{readTime} menit baca</span>
+          {post.tags && post.tags.length > 0 && (
+            <>
+              <span style="color:var(--gray-light)">·</span>
+              <span>{post.tags.map(t => `#${t}`).join(' ')}</span>
+            </>
+          )}
+        </div>
+        <div class="blog-detail-content" set:html={contentHtml} />
+      </article>
+
+      <aside>
+        <div class="blog-aside-box">
+          <h3>Artikel Terkait</h3>
+          {related.length > 0 ? related.map(r => (
+            <a href={`/blog/${r.slug}`} class="related-item">
+              {r.featured_image
+                ? <img src={r.featured_image} alt={r.title} loading="lazy">
+                : <div class="related-item-thumb"></div>
+              }
+              <div>
+                <div class="related-item-title">{r.title}</div>
+                <div class="related-item-date">{fmtDate(r.published_at ?? r.created_at)}</div>
+              </div>
+            </a>
+          )) : (
+            <p style="font-size:.85rem;color:var(--gray);">Belum ada artikel terkait.</p>
+          )}
+
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--gray-light);">
+            <p style="font-size:.85rem;color:var(--gray);margin-bottom:12px;">Tertarik program Transia Career?</p>
+            <a href="/daftar" class="btn-primary" style="width:100%;justify-content:center;font-size:.88rem;padding:12px;">✍️ Daftar Sekarang</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <Footer />
+</Base>

@@ -1,0 +1,49 @@
+---
+interface Props {
+  activePage?: string
+}
+const { activePage = '' } = Astro.props
+
+const links = [
+  { href: '/',          label: 'Beranda',   key: 'home' },
+  { href: '/tentang',   label: 'Tentang',   key: 'tentang' },
+  { href: '/program',   label: 'Program',   key: 'program' },
+  { href: '/alur',      label: 'Alur',      key: 'alur' },
+  { href: '/testimoni', label: 'Testimoni', key: 'testimoni' },
+  { href: '/blog',      label: 'Blog',      key: 'blog' },
+]
+---
+
+<nav id="navbar">
+  <a class="nav-logo" href="/">
+    <svg class="nav-logo-icon" width="38" height="28" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 48 Q10 20 40 20 Q70 20 72 48" stroke="#2a9d8f" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M8 48 Q10 52 12 52 L68 52 Q70 52 72 48" stroke="#2a9d8f" stroke-width="4" fill="none"/>
+      <line x1="8" y1="44" x2="72" y2="44" stroke="#2a9d8f" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="40" cy="18" r="10" fill="#E63027"/>
+    </svg>
+    <span class="nav-logo-text">Transia <span>Career</span></span>
+  </a>
+
+  <ul class="nav-links">
+    {links.map(l => (
+      <li>
+        <a href={l.href} class={activePage === l.key ? 'active' : ''}>
+          {l.label}
+        </a>
+      </li>
+    ))}
+    <li><a href="https://lms.transiacareer.id" target="_blank" rel="noopener" class="nav-lms">🎓 LMS</a></li>
+    <li><a href="/daftar" class="nav-cta">✍️ Daftar</a></li>
+  </ul>
+
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  {links.map(l => <a href={l.href}>{l.label}</a>)}
+  <a href="https://lms.transiacareer.id" target="_blank" rel="noopener">🎓 Masuk LMS</a>
+  <a href="/daftar" style="color: var(--red); font-weight: 700;">✍️ Daftar Sekarang</a>
+</div>

@@ -1,0 +1,244 @@
+---
+import Base from '../layouts/Base.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { getPublishedPosts } from '../lib/supabase'
+
+const posts = await getPublishedPosts().catch(() => [])
+const featuredPost = posts.find(p => p.is_featured) ?? posts[0]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://transiacareer.id/#org',
+      name: 'LPK Transia Career',
+      url: 'https://transiacareer.id',
+      logo: 'https://transiacareer.id/favicon-192.png',
+      contactPoint: { '@type': 'ContactPoint', telephone: '+62-823-2677-5115', contactType: 'customer service', areaServed: 'ID', availableLanguage: 'Indonesian' },
+      address: { '@type': 'PostalAddress', streetAddress: 'Jl. Gunung Lawu No.78 Tempelan', addressLocality: 'Blora', addressRegion: 'Jawa Tengah', addressCountry: 'ID' },
+      sameAs: ['https://www.facebook.com/Lpktransia_career.id', 'https://www.instagram.com/Lpktransia_career.id'],
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': 'https://transiacareer.id/#business',
+      name: 'LPK Transia Career',
+      description: 'Lembaga Pelatihan Kerja resmi untuk program kerja ke Jepang jalur SSW dan Magang dari Blora, Jawa Tengah.',
+      url: 'https://transiacareer.id',
+      telephone: '+62-823-2677-5115',
+      email: 'Lpktransiacareer@gmail.com',
+      address: { '@type': 'PostalAddress', streetAddress: 'Jl. Gunung Lawu No.78 Tempelan', addressLocality: 'Blora', addressRegion: 'Jawa Tengah', postalCode: '58211', addressCountry: 'ID' },
+      priceRange: 'Hubungi kami',
+    },
+  ],
+}
+---
+
+<Base
+  title="Transia Career — LPK Resmi Program Kerja ke Jepang | Blora, Jawa Tengah"
+  description="LPK Transia Career membuka program kerja ke Jepang jalur SSW dan Magang. Resmi, terpercaya, berpengalaman. 50+ alumni, 98% tingkat kelulusan. Dari Blora untuk Indonesia."
+  jsonLd={jsonLd}
+>
+  <Navbar activePage="home" />
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:90px;">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">Program Kerja ke Jepang — Batch 1 Dibuka</div>
+        <h1>Wujudkan Impianmu<br><em>Bekerja</em> di<br><strong>Jepang 🇯🇵</strong></h1>
+        <p class="hero-sub">Transia Career hadir sebagai LPK profesional yang membantu putra-putri Indonesia meraih karir terbaik di Jepang melalui jalur SSW dan Magang bersertifikat.</p>
+        <div class="hero-buttons">
+          <a class="btn-primary" href="/daftar">✍️ Daftar Sekarang</a>
+          <a class="btn-secondary" href="/program">Lihat Program →</a>
+          <a class="btn-secondary" href="https://lms.transiacareer.id" target="_blank" rel="noopener" style="border-color:var(--sky);color:var(--sky);">🎓 Masuk LMS</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">50<span>+</span></div>
+            <div class="stat-label">Alumni Berangkat</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Jalur Program</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98<span>%</span></div>
+            <div class="stat-label">Tingkat Kelulusan</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <span class="hero-flag">🇯🇵</span>
+          <div class="hero-card-title">Program Unggulan</div>
+          <div class="hero-card-sub">Dua jalur resmi menuju Jepang</div>
+          <div class="route-items">
+            <div class="route-item">
+              <span class="route-icon">🏆</span>
+              <div>
+                <div class="route-name">SSW / Tokutei Ginouou (TG)</div>
+                <div class="route-desc">Specified Skill Worker · Gaji ¥150k–¥250k/bln</div>
+              </div>
+            </div>
+            <div class="route-item">
+              <span class="route-icon">🎓</span>
+              <div>
+                <div class="route-name">Magang / Gino Jisshu</div>
+                <div class="route-desc">Program pelatihan kerja 3 tahun di Jepang</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge b1">🎯 Batch 1 — Terbatas 15 Peserta</div>
+        <div class="floating-badge b2">✅ Resmi & Terpercaya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" style="padding: 64px 5%;">
+    <div class="section-inner">
+      <div class="stats-header">
+        <div class="section-tag">Pencapaian Kami</div>
+        <h2 class="section-title" style="color:white;">Angka yang <em style="color:rgba(255,255,255,0.8);">Berbicara</em></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.7);margin:0 auto;">Transia Career terus bertumbuh, membuktikan komitmen kami dalam mencetak tenaga kerja Indonesia terbaik untuk Jepang.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card fade-in"><div class="stat-card-num">50<sup>+</sup></div><div class="stat-card-label">Alumni Berangkat ke Jepang</div></div>
+        <div class="stat-card fade-in"><div class="stat-card-num">3</div><div class="stat-card-label">Batch Sukses Diberangkatkan</div></div>
+        <div class="stat-card fade-in"><div class="stat-card-num">98<sup>%</sup></div><div class="stat-card-label">Tingkat Kelulusan Ujian</div></div>
+        <div class="stat-card fade-in"><div class="stat-card-num">15</div><div class="stat-card-label">Peserta per Batch (Terbatas)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS PREVIEW -->
+  <section style="padding: 80px 5%; background: var(--off-white);">
+    <div class="section-inner">
+      <div class="section-tag">Program Kami</div>
+      <h2 class="section-title">Dua Jalur Menuju <em>Jepang</em></h2>
+      <p class="section-sub">Pilih jalur yang sesuai dengan profil dan tujuan karir kamu.</p>
+      <div class="programs-grid">
+        <a href="/program" class="program-card" style="text-decoration:none;">
+          <div class="program-card-header">
+            <span class="program-tag tag-ssw">Jalur SSW</span>
+            <span class="program-icon">🏆</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Tokutei Ginouou (TG)</div>
+            <div class="program-jp">Specified Skill Worker</div>
+            <p class="program-desc">Program pekerja terampil dengan kontrak kerja resmi. Gaji kompetitif, bisa diperpanjang, dan membuka peluang karir jangka panjang di Jepang.</p>
+            <div class="program-features">
+              <div class="pf-item">Ujian JFT & SSW (Bahasa + Skill)</div>
+              <div class="pf-item">Gaji setara standar Jepang</div>
+              <div class="pf-item">Kontrak bisa diperpanjang</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Gaji</div><div class="ps-val">¥150.000 – ¥250.000 / bulan</div></div>
+            </div>
+          </div>
+        </a>
+        <a href="/program" class="program-card card-magang" style="text-decoration:none;">
+          <div class="program-card-header">
+            <span class="program-tag tag-magang">Jalur Magang</span>
+            <span class="program-icon">🎓</span>
+          </div>
+          <div class="program-card-body">
+            <div class="program-name">Gino Jisshu</div>
+            <div class="program-jp">Praktik Kerja Teknis</div>
+            <p class="program-desc">Program magang teknis 3 tahun di Jepang. Cocok untuk fresh graduate yang ingin mendapatkan pengalaman kerja dan keterampilan teknis berkelas dunia.</p>
+            <div class="program-features">
+              <div class="pf-item">Durasi 3 tahun di Jepang</div>
+              <div class="pf-item">Biaya keberangkatan dibantu</div>
+              <div class="pf-item">Akomodasi disediakan perusahaan</div>
+            </div>
+            <div class="program-salary">
+              <div><div class="ps-label">Estimasi Allowance</div><div class="ps-val">¥80.000 – ¥150.000 / bulan</div></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI PREVIEW -->
+  <section style="padding: 80px 5%; background:var(--white);">
+    <div class="section-inner">
+      <div class="section-tag">Testimoni</div>
+      <h2 class="section-title">Kata Mereka yang <em>Sudah Berangkat</em></h2>
+      <div class="testi-grid" style="margin-top:40px;">
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Berkat Transia Career, saya sekarang bekerja di pabrik otomotif di Aichi. Proses bimbingannya sangat profesional dan transparan."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AS</div>
+            <div><div class="testi-name">Ahmad Santoso</div><div class="testi-role">Aichi, Jepang 🇯🇵</div><span class="testi-badge badge-ssw">SSW / TG</span></div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Awalnya ragu, tapi setelah konsultasi langsung ke LPK-nya, saya mantap daftar. Alhamdulillah sudah 1,5 tahun di Osaka."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--red),var(--red-dark));">DR</div>
+            <div><div class="testi-name">Dewi Rahayu</div><div class="testi-role">Osaka, Jepang 🇯🇵</div><span class="testi-badge badge-magang">Magang</span></div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Tim Transia sangat membantu dalam pengurusan dokumen COE dan VISA. Tidak ada biaya tersembunyi. Semua transparan dari awal."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#2a9d8f,#1a7a6a);">BP</div>
+            <div><div class="testi-name">Budi Prasetyo</div><div class="testi-role">Nagoya, Jepang 🇯🇵</div><span class="testi-badge badge-ssw">SSW / TG</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a class="btn-secondary" href="/testimoni">Lihat Semua Testimoni →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  {featuredPost && (
+    <section style="padding: 80px 5%; background: var(--off-white);">
+      <div class="section-inner">
+        <div class="section-tag">Blog & Tips</div>
+        <h2 class="section-title">Artikel <em>Terbaru</em></h2>
+        <div style="margin-top:32px;">
+          <a href={`/blog/${featuredPost.slug}`} class="blog-featured">
+            <div class="blog-featured-img">
+              {featuredPost.featured_image
+                ? <img src={featuredPost.featured_image} alt={featuredPost.title} loading="lazy">
+                : <div style="width:100%;height:100%;background:var(--sky-pale);min-height:260px;"></div>
+              }
+            </div>
+            <div class="blog-featured-body">
+              <div class="blog-featured-label">✦ Artikel Pilihan</div>
+              <span class={`blog-cat-badge blog-cat-${featuredPost.category}`}>{featuredPost.category}</span>
+              <h3 style="font-family:var(--font-display);font-size:1.5rem;line-height:1.25;margin:12px 0;color:var(--dark)">{featuredPost.title}</h3>
+              <p style="color:var(--gray);font-size:.9rem;line-height:1.6;margin-bottom:16px;">{featuredPost.excerpt}</p>
+              <div class="blog-card-meta">{new Date(featuredPost.created_at).toLocaleDateString('id-ID', {day:'numeric',month:'long',year:'numeric'})}</div>
+            </div>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a class="btn-secondary" href="/blog">Lihat Semua Artikel →</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA BANNER -->
+  <section style="padding: 80px 5%; background: linear-gradient(135deg, var(--red-dark), var(--red));">
+    <div class="section-inner" style="text-align:center;">
+      <div style="font-size:.85rem;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;">⏰ Batch 1 Segera Penuh</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);color:white;margin-bottom:16px;">Jangan Lewatkan Kesempatan<br>Batch 1 Ini!</h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:1rem;margin-bottom:32px;">Hanya <strong style="color:white;">15 peserta</strong> per batch. Daftar sekarang sebelum kuota penuh.</p>
+      <a class="btn-primary" href="/daftar" style="background:white;color:var(--red);display:inline-flex;margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,0.2);">✍️ Daftar Sekarang — Gratis</a>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

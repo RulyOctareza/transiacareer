@@ -1,19 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Background rounded square -->
-  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sun rays (orange/amber) -->
+  <g stroke="#F4A62A" stroke-width="6" stroke-linecap="round">
+    <line x1="100" y1="52" x2="100" y2="36"/>
+    <line x1="130" y1="60" x2="141" y2="48"/>
+    <line x1="148" y1="88" x2="164" y2="85"/>
+    <line x1="136" y1="116" x2="148" y2="126"/>
+    <line x1="70"  y1="60" x2="59"  y2="48"/>
+    <line x1="52"  y1="88" x2="36"  y2="85"/>
+    <line x1="64"  y1="116" x2="52" y2="126"/>
+  </g>
 
-  <!-- Boat hull arc -->
-  <path d="M8 50 Q10 30 32 30 Q54 30 56 50" stroke="#2a9d8f" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-  <path d="M8 50 Q10 55 12 55 L52 55 Q54 55 56 50" stroke="#2a9d8f" stroke-width="4.5" fill="none"/>
-  <line x1="8" y1="47" x2="56" y2="47" stroke="#2a9d8f" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Left book cover (dark teal-green) -->
+  <path d="M12 172 L12 128 Q55 112 96 116 L96 160 Q54 156 12 172Z" fill="#1B7B52"/>
 
-  <!-- Sun / red circle -->
-  <circle cx="32" cy="26" r="12" fill="#E63027"/>
+  <!-- Right book cover (dark teal-green) -->
+  <path d="M104 116 Q146 112 188 128 L188 172 Q146 156 104 160Z" fill="#1B7B52"/>
 
-  <!-- Sun rays -->
-  <line x1="32" y1="8" x2="32" y2="12" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="46" y1="12" x2="43.5" y2="14.5" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="50" y1="26" x2="46" y2="26" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="18" y1="26" x2="14" y2="26" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="18" y1="12" x2="20.5" y2="14.5" stroke="#f4a261" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left pages (off-white) -->
+  <path d="M96 116 Q56 120 16 134 L16 166 Q56 152 96 156Z" fill="#EFF8EF"/>
+
+  <!-- Right pages (off-white) -->
+  <path d="M104 116 L104 156 Q144 152 184 166 L184 134 Q144 120 104 116Z" fill="#EFF8EF"/>
+
+  <!-- Center spine fold -->
+  <path d="M96 116 Q100 114 104 116 L104 160 Q100 162 96 160Z" fill="#155E3E"/>
+
+  <!-- Bottom book base arc -->
+  <path d="M12 168 Q100 185 188 168 L188 175 Q100 193 12 175Z" fill="#155E3E"/>
+
+  <!-- Bookmark tab on right cover -->
+  <path d="M185 126 L192 126 L192 148 L188.5 144 L185 148Z" fill="#155E3E"/>
+
+  <!-- Sun (red circle) -->
+  <circle cx="100" cy="90" r="32" fill="#E63027"/>
 </svg>
